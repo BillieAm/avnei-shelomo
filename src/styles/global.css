@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 45 100% 92%;
+    --primary: 205 100% 38%;
+    --accent: 45 100% 50%;
+    --text: 0 0% 20%;
+    --bg-200: 45 67% 88%;
+    --bg-300: 45 28% 72%;
+    --primary-200: 205 100% 26%;
+    --primary-300: 205 100% 72%;
+    --accent-200: 45 100% 35%;
+    --text-200: 0 0% 45%;
+    --text-white: 0 0% 100%;
+    --bg-gradient: 205 100% 10%;
+    --bg-text-gradient: rgb(184, 138, 68);
+    --text-gradient: linear-gradient(
+      90deg,
+      rgba(184, 138, 68, 1) 0%,
+      rgba(249, 242, 149, 1) 11%,
+      rgba(224, 170, 62, 1) 38%,
+      rgba(249, 242, 149, 1) 60%,
+      rgba(184, 138, 68, 1) 76%,
+      rgba(252, 176, 69, 1) 100%
+    );
+  }
+}
