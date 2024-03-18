@@ -1,7 +1,9 @@
 ---
-import Nav from '../components/Nav.astro';
+import Header from '../components/Header.astro';
 
 import { getLangFromUrl } from '../i18n/utils';
+
+import '../styles/global.css' 
 
 const lang = getLangFromUrl(Astro.url);
 let htmlDirection = lang === 'he' ? 'rtl' : 'ltr';
@@ -25,7 +27,7 @@ const { title, description } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		<Nav />
+		<Header />
 		<slot />
 	</body>
 </html>

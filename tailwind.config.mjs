@@ -8,7 +8,7 @@ export default {
           DEFAULT: "hsl(var(--background))",
           200: "hsl(var(--bg-200))",
           300: "hsl(var(--bg-300))",
-          gradient: "hsl(var(--bg-gradient))"
+          nav: "hsl(var(--bg-nav))"
         },
         primary: {
           DEFAULT: "hsl(var(--primary))",

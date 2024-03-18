@@ -1,6 +1,11 @@
+import LogoAvneiEn from "../assets/logo/avnei-shelomo_en.webp";
+import LogoAvneiHe from "../assets/logo/avnei-shelomo_he.webp";
+import LogoChasadaiEn from "../assets/logo/chasadai-gavriel_en.webp";
+import LogoChasadaiHe from "../assets/logo/chasadai-gavriel_he.webp";
+
 export const languages = {
-  he: "Hebrew",
-  en: "English"
+  he: "עברית",
+  en: "EN"
 };
 
 export const defaultLang = "he";
@@ -13,7 +18,9 @@ export const ui = {
     "nav.lessons": "שיעורים",
     "nav.gallery": "גלריה",
     "nav.donate": "תרומות",
-    "nav.contact": "צור קשר"
+    "header.contact": "צור קשר",
+    "header.LogoAvnei": LogoAvneiHe,
+    "header.LogoChasadai": LogoChasadaiHe
   },
   en: {
     "nav.home": "Home",
@@ -21,6 +28,8 @@ export const ui = {
     "nav.lessons": "Lessons",
     "nav.gallery": "Gallery",
     "nav.donate": "Donate",
-    "nav.contact": "Contact"
+    "header.contact": "Contact",
+    "header.LogoAvnei": LogoAvneiEn,
+    "header.LogoChasadai": LogoChasadaiEn
   }
 } as const;
