@@ -2,15 +2,24 @@
 import Image from 'astro/components/Image.astro';
 import { getLangFromUrl, useTranslations, useTranslatedPath } from '../i18n/utils';
 
+// logos imports
+import LogoAvneiEn from "../assets/logo/avnei-shelomo_en.webp";
+import LogoAvneiHe from "../assets/logo/avnei-shelomo_he.webp";
+import LogoChasadaiEn from "../assets/logo/chasadai-gavriel_en.webp";
+import LogoChasadaiHe from "../assets/logo/chasadai-gavriel_he.webp";
+
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang)
+
+const logoAvnei = lang === 'he' ? LogoAvneiHe : LogoAvneiEn;
+const logoChasadai = lang === 'he' ? LogoChasadaiHe : LogoChasadaiEn;
 ---
 <header class="bg-background-nav text-frontGround-white p-4">
   <!-- Logos -->
   <a href={translatePath('/')} class="w-16 flex">
-    <Image src={t('header.LogoAvnei')} alt='Avnei Shelomo' />
-    <Image src={t('header.LogoChasadai')} alt='Chasadai Gavriel' />
+    <Image src={logoAvnei} alt='Avnei Shelomo' />
+    <Image src={logoChasadai} alt='Chasadai Gavriel' />
   </a>
 
   <!-- Pages links -->
