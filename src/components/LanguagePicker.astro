@@ -1,10 +1,16 @@
 ---
-import {languages} from '../i18n/ui';
+import { languages } from "../i18n/ui";
+import { getLangFromUrl } from "../i18n/utils";
+
+const currentLang = getLangFromUrl(Astro.url);
 ---
+
 <ul>
-  {Object.entries(languages).map(([lang, label]) => (
-    <li>
-      <a href={`/${lang}/`}>{label}</a>
-    </li>
-  ))}
+  {
+    Object.entries(languages).map(([lang, label]) => (
+      <li class={currentLang === lang ? "hidden" : ""}>
+        <a href={lang !== "he" ? `/${lang}/` : "/"}>{label}</a>
+      </li>
+    ))
+  }
 </ul>

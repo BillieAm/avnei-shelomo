@@ -1,6 +1,16 @@
 ---
-import Image from 'astro/components/Image.astro';
-import { getLangFromUrl, useTranslations, useTranslatedPath } from '../i18n/utils';
+import {
+  getLangFromUrl,
+  useTranslations,
+  useTranslatedPath,
+} from "../i18n/utils";
+
+import NavHamburger from "./NavHamburger";
+import NavMobile from "./NavMobile";
+import NavLinks from "./NavLinks.astro";
+import LanguagePicker from "./LanguagePicker.astro";
+
+import Image from "astro/components/Image.astro";
 
 // logos imports
 import LogoAvneiEn from "../assets/logo/avnei-shelomo_en.webp";
@@ -10,46 +20,34 @@ import LogoChasadaiHe from "../assets/logo/chasadai-gavriel_he.webp";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-const translatePath = useTranslatedPath(lang)
+const translatePath = useTranslatedPath(lang);
 
-const logoAvnei = lang === 'he' ? LogoAvneiHe : LogoAvneiEn;
-const logoChasadai = lang === 'he' ? LogoChasadaiHe : LogoChasadaiEn;
+const logoAvnei = lang === "he" ? LogoAvneiHe : LogoAvneiEn;
+const logoChasadai = lang === "he" ? LogoChasadaiHe : LogoChasadaiEn;
 ---
-<header class="bg-background-nav text-frontGround-white p-4">
+
+<header class="bg-background-nav p-4 text-frontGround-white">
+  <!-- Mobile Nav -->
+  <div class="lg:hidden">
+    <NavHamburger client:load />
+    <NavMobile client:load>
+      <NavLinks />
+    </NavMobile>
+  </div>
+
   <!-- Logos -->
-  <a href={translatePath('/')} class="w-16 flex">
-    <Image src={logoAvnei} alt='Avnei Shelomo' />
-    <Image src={logoChasadai} alt='Chasadai Gavriel' />
+  <a
+    href={translatePath("/")}
+    aria-label={t("logo.ariaLabel")}
+    class="flex w-16 gap-4"
+  >
+    <Image src={logoAvnei} alt="Avnei Shelomo" />
+    <Image src={logoChasadai} alt="Chasadai Gavriel" />
   </a>
 
-  <!-- Pages links -->
   <nav>
-    <ul>
-        <li>
-            <a href={translatePath('/')}>
-              {t('nav.home')}
-            </a>
-        </li>
-        <li>
-            <a href={translatePath('/about/')}>
-              {t('nav.about')}
-            </a>
-        </li>
-        <li>
-            <a href={translatePath('/lessons/')}>
-              {t('nav.lessons')}
-            </a>
-        </li>
-        <li>
-            <a href={translatePath('/gallery/')}>
-              {t('nav.gallery')}
-            </a>
-        </li>
-        <li>
-            <a href={translatePath('/donate/')}>
-              {t('nav.donate')}
-            </a>
-        </li>
-    </ul>
+    <NavLinks />
   </nav>
+
+  <LanguagePicker />
 </header>

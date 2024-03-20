@@ -1,6 +1,6 @@
 export const languages = {
   he: "עברית",
-  en: "EN"
+  en: "English",
 };
 
 export const defaultLang = "he";
@@ -13,7 +13,8 @@ export const ui = {
     "nav.lessons": "שיעורים",
     "nav.gallery": "גלריה",
     "nav.donate": "תרומות",
-    "header.contact": "צור קשר"
+    "header.contact": "צור קשר",
+    "logo.ariaLabel": "לעמוד הבית",
   },
   en: {
     "nav.home": "Home",
@@ -21,6 +22,7 @@ export const ui = {
     "nav.lessons": "Lessons",
     "nav.gallery": "Gallery",
     "nav.donate": "Donate",
-    "header.contact": "Contact"
-  }
+    "header.contact": "Contact",
+    "logo.ariaLabel": "Go to homepage",
+  },
 } as const;

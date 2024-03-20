@@ -3,6 +3,21 @@
 @tailwind utilities;
 
 @layer base {
+  @font-face {
+    font-family: "Alef";
+    src: url("/fonts/Alef-regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Alef";
+    src: url("/fonts/Alef-bold.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+  }
+
   :root {
     --background: 45 100% 92%;
     --primary: 205 100% 38%;
@@ -27,4 +42,21 @@
       rgba(252, 176, 69, 1) 100%
     );
   }
+}
+
+/* hamburger/close icon animation */
+.line {
+  @apply h-1 w-full rounded-lg bg-slate-600 transition;
+}
+
+.open .top {
+  @apply translate-y-2.5 rotate-45;
+}
+
+.open .middle {
+  @apply hidden;
+}
+
+.open .bottom {
+  @apply -translate-y-2.5 -rotate-45;
 }
