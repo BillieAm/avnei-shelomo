@@ -5,9 +5,7 @@ import {
   useTranslatedPath,
 } from "../i18n/utils";
 
-import NavHamburger from "./NavHamburger";
 import NavMobile from "./NavMobile";
-import NavLinks from "./NavLinks.astro";
 import LanguagePicker from "./LanguagePicker.astro";
 
 import Image from "astro/components/Image.astro";
@@ -24,30 +22,48 @@ const translatePath = useTranslatedPath(lang);
 
 const logoAvnei = lang === "he" ? LogoAvneiHe : LogoAvneiEn;
 const logoChasadai = lang === "he" ? LogoChasadaiHe : LogoChasadaiEn;
+
+const translatedRouts = [
+  { name: t("nav.home"), path: translatePath("/") },
+  { name: t("nav.about"), path: translatePath("/about/") },
+  { name: t("nav.lessons"), path: translatePath("/lessons/") },
+  { name: t("nav.gallery"), path: translatePath("/gallery/") },
+  { name: t("nav.donate"), path: translatePath("/donate") },
+];
 ---
 
-<header class="bg-background-nav p-4 text-frontGround-white">
-  <!-- Mobile Nav -->
-  <div class="lg:hidden">
-    <NavHamburger client:load />
-    <NavMobile client:load>
-      <NavLinks />
-    </NavMobile>
+<header
+  class="flex items-center justify-between bg-background-nav p-4 text-frontGround-white"
+>
+  <!-- Logos -->
+  <div class="">
+    <a
+      href={translatePath("/")}
+      aria-label={t("logo.ariaLabel")}
+      class="flex gap-4"
+    >
+      <Image src={logoAvnei} alt="Avnei Shelomo" width={50} />
+      <Image src={logoChasadai} alt="Chasadai Gavriel" width={50} />
+    </a>
   </div>
 
-  <!-- Logos -->
-  <a
-    href={translatePath("/")}
-    aria-label={t("logo.ariaLabel")}
-    class="flex w-16 gap-4"
-  >
-    <Image src={logoAvnei} alt="Avnei Shelomo" />
-    <Image src={logoChasadai} alt="Chasadai Gavriel" />
-  </a>
-
-  <nav>
-    <NavLinks />
+  <!-- Desktop Nav -->
+  <nav class="hidden md:block">
+    <ul>
+      {
+        translatedRouts.map((route) => (
+          <li>
+            <a href={route.path}>{route.name}</a>
+          </li>
+        ))
+      }
+    </ul>
   </nav>
 
-  <LanguagePicker />
+  <div class="hidden md:flex">
+    <LanguagePicker />
+  </div>
+
+  <!-- Mobile Nav -->
+  <NavMobile routesList={translatedRouts} client:load />
 </header>

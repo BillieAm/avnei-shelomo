@@ -46,7 +46,7 @@
 
 /* hamburger/close icon animation */
 .line {
-  @apply h-1 w-full rounded-lg bg-slate-600 transition;
+  @apply h-1 w-full rounded-lg bg-frontGround-white transition;
 }
 
 .open .top {
