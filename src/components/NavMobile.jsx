@@ -9,13 +9,13 @@ export default function NavMobile({ routesList }) {
       <button
         aria-label={!isNavMobileOpen ? "פתיחת תפריט" : "סגירת תפריט"}
         onClick={() => isNavMobileOpen.set(!$isNavMobileOpen)}
-        class={`relative z-50 flex h-6 w-6 flex-col items-center justify-between justify-self-start ${
+        className={`relative z-50 flex h-6 w-6 flex-col items-center justify-between justify-self-start ${
           $isNavMobileOpen && "open"
         }`}
       >
-        <span class="line top"></span>
-        <span class="line middle"></span>
-        <span class="line bottom"></span>
+        <span className="line top"></span>
+        <span className="line middle"></span>
+        <span className="line bottom"></span>
       </button>
       {!$isNavMobileOpen ? null : (
         <nav>

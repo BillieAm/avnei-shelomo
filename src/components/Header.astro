@@ -5,10 +5,11 @@ import {
   useTranslatedPath,
 } from "../i18n/utils";
 
-import NavMobile from "./NavMobile";
-import LanguagePicker from "./LanguagePicker.astro";
+import NavMobile from "@components/NavMobile";
+import LanguagePicker from "@components/LanguagePicker.astro";
+import Link from "@components/Link.astro";
 
-import Image from "astro/components/Image.astro";
+import { Image } from "astro:assets";
 
 // logos imports
 import LogoAvneiEn from "../assets/logo/avnei-shelomo_en.webp";
@@ -32,38 +33,49 @@ const translatedRouts = [
 ];
 ---
 
-<header
-  class="flex items-center justify-between bg-background-nav p-4 text-frontGround-white"
->
-  <!-- Logos -->
-  <div class="">
-    <a
-      href={translatePath("/")}
-      aria-label={t("logo.ariaLabel")}
-      class="flex gap-4"
-    >
-      <Image src={logoAvnei} alt="Avnei Shelomo" width={50} />
-      <Image src={logoChasadai} alt="Chasadai Gavriel" width={50} />
-    </a>
+<header class="bg-background-nav px-6 py-2 text-lg text-frontGround-white">
+  <div class="mx-auto flex max-w-6xl items-center justify-between">
+    <!-- Logos -->
+    <div class="">
+      <a
+        href={translatePath("/")}
+        aria-label={t("logo.ariaLabel")}
+        class="flex gap-4"
+      >
+        <Image src={logoAvnei} alt="Avnei Shelomo" height={70} />
+        <Image src={logoChasadai} alt="Chasadai Gavriel" height={70} />
+      </a>
+    </div>
+
+    <!-- Desktop Nav -->
+    <nav class="hidden lg:block">
+      <ul class="flex gap-12">
+        {
+          translatedRouts.map((route) => (
+            <li>
+              <a href={route.path} class="hover:text-accent">
+                {route.name}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+
+    <div class="flex items-center gap-12">
+      <!-- Language and contacts buttons -->
+      <div class="hidden items-center gap-10 md:flex">
+        <LanguagePicker />
+        <Link
+          href="#contact"
+          text={t("header.contact")}
+          class="bg-accent text-frontGround"
+        />
+      </div>
+      <!-- Mobile Nav -->
+      <div class="lg:hidden">
+        <NavMobile routesList={translatedRouts} client:load />
+      </div>
+    </div>
   </div>
-
-  <!-- Desktop Nav -->
-  <nav class="hidden md:block">
-    <ul>
-      {
-        translatedRouts.map((route) => (
-          <li>
-            <a href={route.path}>{route.name}</a>
-          </li>
-        ))
-      }
-    </ul>
-  </nav>
-
-  <div class="hidden md:flex">
-    <LanguagePicker />
-  </div>
-
-  <!-- Mobile Nav -->
-  <NavMobile routesList={translatedRouts} client:load />
 </header>

@@ -9,7 +9,9 @@ const currentLang = getLangFromUrl(Astro.url);
   {
     Object.entries(languages).map(([lang, label]) => (
       <li class={currentLang === lang ? "hidden" : ""}>
-        <a href={lang !== "he" ? `/${lang}/` : "/"}>{label}</a>
+        <a href={lang !== "he" ? `/${lang}/` : "/"} class="hover:text-accent">
+          {label}
+        </a>
       </li>
     ))
   }

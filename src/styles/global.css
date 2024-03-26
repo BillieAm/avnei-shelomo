@@ -60,3 +60,8 @@
 .open .bottom {
   @apply -translate-y-2.5 -rotate-45;
 }
+
+/* Generic classes */
+.btn {
+  @apply rounded-lg px-6 py-2 font-bold hover:opacity-80;
+}
