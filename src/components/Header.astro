@@ -33,10 +33,10 @@ const translatedRouts = [
 ];
 ---
 
-<header class="bg-background-nav px-6 py-2 text-lg text-frontGround-white">
+<header class="z-10 bg-nav p-3 py-2 text-lg text-nav-foreground">
   <div class="mx-auto flex max-w-6xl items-center justify-between">
     <!-- Logos -->
-    <div class="">
+    <div class="z-50">
       <a
         href={translatePath("/")}
         aria-label={t("logo.ariaLabel")}
@@ -64,17 +64,21 @@ const translatedRouts = [
 
     <div class="flex items-center gap-12">
       <!-- Language and contacts buttons -->
-      <div class="hidden items-center gap-10 md:flex">
+      <div class="flex items-center gap-10">
         <LanguagePicker />
         <Link
           href="#contact"
           text={t("header.contact")}
-          class="bg-accent text-frontGround"
+          class="hidden bg-accent text-foreground md:block"
         />
       </div>
       <!-- Mobile Nav -->
       <div class="lg:hidden">
-        <NavMobile routesList={translatedRouts} client:load />
+        <NavMobile
+          routesList={translatedRouts}
+          transContact={t("header.contact")}
+          client:load
+        />
       </div>
     </div>
   </div>

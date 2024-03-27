@@ -19,13 +19,13 @@ export default defineConfig({
     icon({
       include: {
         ph: [
-          "ph:play",
-          "ph:arrow-left",
-          "ph:arrow-right",
-          "ph:phone",
-          "ph:whatsapp-logo",
-          "ph:envelope-simple",
-          "ph:map-pin",
+          "play",
+          "arrow-left",
+          "arrow-right",
+          "phone",
+          "whatsapp-logo",
+          "envelope-simple",
+          "map-pin",
         ],
       },
     }),

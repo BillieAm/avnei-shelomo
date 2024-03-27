@@ -1,0 +1,81 @@
+---
+import {
+  getLangFromUrl,
+  useTranslations,
+  useTranslatedPath,
+} from "../i18n/utils";
+
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+
+// logos imports
+import LogoAvneiEn from "../assets/logo/avnei-shelomo_en.webp";
+import LogoAvneiHe from "../assets/logo/avnei-shelomo_he.webp";
+import LogoChasadaiEn from "../assets/logo/chasadai-gavriel_en.webp";
+import LogoChasadaiHe from "../assets/logo/chasadai-gavriel_he.webp";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const logoAvnei = lang === "he" ? LogoAvneiHe : LogoAvneiEn;
+const logoChasadai = lang === "he" ? LogoChasadaiHe : LogoChasadaiEn;
+
+const contacts = [
+  {
+    href: "mailto:refcohenil@gmail.com",
+    aria: t("footer.aria.mail"),
+    icon: "ph:envelope-simple",
+  },
+  {
+    href: "https://wa.me/972543862659",
+    aria: t("footer.aria.whatsapp"),
+    icon: "ph:whatsapp-logo",
+  },
+  { href: "tel:054-3862659", aria: t("footer.aria.phone"), icon: "ph:phone" },
+];
+---
+
+<footer
+  class="relative flex flex-col items-center gap-10 bg-footer pb-2 pt-8 text-footer-foreground"
+>
+  <h2 class="text-4xl font-bold tracking-wider">{t("footer.title")}</h2>
+
+  <div class="flex flex-col gap-8 md:flex-row">
+    <!-- Contacts Links -->
+    <div class="flex gap-8">
+      {
+        contacts.map((item) => (
+          <a
+            href={item.href}
+            aria-label={item.aria}
+            class="rounded-full bg-primary-300 p-2 "
+          >
+            <Icon name={item.icon} class="text-4xl text-foreground" />
+          </a>
+        ))
+      }
+    </div>
+    <!-- Address -->
+    <div class="flex items-center gap-2">
+      <Icon name="ph:map-pin" class="text-2xl" />
+      <p>{t("footer.address")}</p>
+    </div>
+  </div>
+
+  <div class="flex flex-col items-center gap-8 md:flex-row md:items-end">
+    <!-- Logos -->
+    <div class="flex gap-4">
+      <Image src={logoAvnei} alt="Avnei Shelomo" height={70} />
+      <Image src={logoChasadai} alt="Chasadai Gavriel" height={70} />
+    </div>
+    <!-- Rights -->
+    <small>
+      {t("footer.rights")}&copy;<span id="copyright"></span>
+    </small>
+  </div>
+</footer>
+
+<script>
+  const copyYear = document.getElementById("copyright") as HTMLElement;
+  copyYear.textContent = new Date().getFullYear().toString();
+</script>

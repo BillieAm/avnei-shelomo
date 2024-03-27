@@ -20,17 +20,51 @@
 
   :root {
     --background: 45 100% 92%;
-    --primary: 205 100% 38%;
-    --accent: 45 100% 50%;
-    --text: 0 0% 20%;
+    --foreground: 222.2 84% 4.9%;
+
     --bg-200: 45 67% 88%;
     --bg-300: 45 28% 72%;
+
+    --text-200: 0 0% 45%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 205 100% 38%;
+    --primary-foreground: 0 0% 100%;
+
     --primary-200: 205 100% 26%;
     --primary-300: 205 100% 72%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 45 100% 50%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
     --accent-200: 45 100% 35%;
-    --text-200: 0 0% 45%;
-    --text-white: 0 0% 100%;
-    --bg-nav: 205 100% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --nav: 205 100% 10%;
+    --nav-foreground: 0 0% 100%;
+
+    --footer: 0 0% 20%;
+    --footer-foreground: 0 0% 100%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+
     --bg-text-gradient: rgb(184, 138, 68);
     --text-gradient: linear-gradient(
       90deg,
@@ -44,9 +78,14 @@
   }
 }
 
+@layer base {
+  body {
+    @apply text-foreground bg-background;
+  }
+}
 /* hamburger/close icon animation */
 .line {
-  @apply h-1 w-full rounded-lg bg-frontGround-white transition;
+  @apply bg-nav-foreground h-1 w-full rounded-lg transition;
 }
 
 .open .top {
