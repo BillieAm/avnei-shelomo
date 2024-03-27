@@ -8,6 +8,8 @@ export const showDefaultLang = false;
 
 export const ui = {
   he: {
+    "association.name": "חסדי גבריאל",
+    "association.num": "עמותה רשומה מס׳",
     "nav.home": "בית",
     "nav.about": "אודות",
     "nav.lessons": "שיעורים",
@@ -26,6 +28,8 @@ export const ui = {
     "footer.rights": "חסדי גבריאל - אבני שלמה",
   },
   en: {
+    "association.name": "Chasadai Gavriel",
+    "association.num": "Registered association no. ",
     "nav.home": "Home",
     "nav.about": "About",
     "nav.lessons": "Lessons",

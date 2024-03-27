@@ -1,0 +1,19 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<div
+  class="flex flex-col items-center gap-8 bg-nav bg-[url('../assets/bg/KV2A5892.JPG')] bg-cover bg-center p-16 bg-blend-soft-light"
+>
+  <div
+    class="rounded-xl bg-nav p-8 text-center leading-8 text-nav-foreground opacity-70"
+  >
+    <p>{t("association.name")}</p>
+    <p>{t("association.num")} 580686889</p>
+    <p>972-54-3862659</p>
+    <p>chasadaigavriel@gmail.com</p>
+  </div>
+</div>
