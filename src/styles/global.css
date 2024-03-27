@@ -80,12 +80,12 @@
 
 @layer base {
   body {
-    @apply text-foreground bg-background;
+    @apply bg-background text-foreground;
   }
 }
 /* hamburger/close icon animation */
 .line {
-  @apply bg-nav-foreground h-1 w-full rounded-lg transition;
+  @apply h-1 w-full rounded-lg bg-nav-foreground transition;
 }
 
 .open .top {
@@ -102,5 +102,5 @@
 
 /* Generic classes */
 .btn {
-  @apply rounded-lg px-6 py-2 font-bold hover:opacity-80;
+  @apply inline-block rounded-lg px-6 py-2 font-bold hover:opacity-80;
 }

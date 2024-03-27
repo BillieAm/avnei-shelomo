@@ -1,9 +1,5 @@
 ---
-import {
-  getLangFromUrl,
-  useTranslations,
-  useTranslatedPath,
-} from "../i18n/utils";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
 import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
@@ -36,6 +32,7 @@ const contacts = [
 ---
 
 <footer
+  id="contacts"
   class="relative flex flex-col items-center gap-10 bg-footer pb-2 pt-8 text-footer-foreground"
 >
   <h2 class="text-4xl font-bold tracking-wider">{t("footer.title")}</h2>
