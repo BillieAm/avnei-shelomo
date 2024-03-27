@@ -33,17 +33,19 @@ const translatedRouts = [
 ];
 ---
 
-<header class="z-10 bg-nav p-3 py-2 text-lg text-nav-foreground">
+<header
+  class="fixed top-0 z-10 w-full bg-nav p-3 py-2 text-lg text-nav-foreground"
+>
   <div class="mx-auto flex max-w-6xl items-center justify-between">
     <!-- Logos -->
-    <div class="z-50">
+    <div class="max-w-1/3 z-50">
       <a
         href={translatePath("/")}
         aria-label={t("logo.ariaLabel")}
         class="flex gap-4"
       >
-        <Image src={logoAvnei} alt="Avnei Shelomo" height={70} />
-        <Image src={logoChasadai} alt="Chasadai Gavriel" height={70} />
+        <Image src={logoAvnei} alt="Avnei Shelomo" height={65} />
+        <Image src={logoChasadai} alt="Chasadai Gavriel" height={65} />
       </a>
     </div>
 
