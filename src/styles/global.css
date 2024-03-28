@@ -78,24 +78,31 @@
   }
 }
 
-/* hamburger/close icon animation */
-.line {
-  @apply h-1 w-full rounded-lg bg-nav-foreground transition;
+@layer components {
+  .btn {
+    @apply rounded-lg px-6 py-2 font-bold hover:opacity-80;
+  }
+
+  .content-wrapper {
+    @apply px-8 py-16;
+  }
 }
 
-.open .top {
-  @apply translate-y-2.5 rotate-45;
-}
+@layer utilities {
+  /* hamburger/close icon animation */
+  .line {
+    @apply h-1 w-full rounded-lg bg-nav-foreground transition;
+  }
 
-.open .middle {
-  @apply hidden;
-}
+  .open .top {
+    @apply translate-y-2.5 rotate-45;
+  }
 
-.open .bottom {
-  @apply -translate-y-2.5 -rotate-45;
-}
+  .open .middle {
+    @apply hidden;
+  }
 
-/* Generic classes */
-.btn {
-  @apply rounded-lg px-6 py-2 font-bold hover:opacity-80;
+  .open .bottom {
+    @apply -translate-y-2.5 -rotate-45;
+  }
 }

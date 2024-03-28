@@ -3,7 +3,6 @@ import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
 import { Icon } from "astro-icon/components";
 
-import ContentWrapper from "@layouts/ContnetWrapper.astro";
 import Link from "@components/Link.astro";
 
 const lang = getLangFromUrl(Astro.url);
@@ -46,35 +45,33 @@ const payments = [
 ];
 ---
 
-<ContentWrapper>
-  <div
-    class="mx-auto grid max-w-4xl grid-cols-1 gap-x-10 gap-y-6 sm:grid-cols-3"
-  >
-    {
-      payments.map((payment) => (
-        <article class="row-span-4 grid grid-rows-subgrid rounded-xl border border-black bg-white p-6 text-center transition hover:scale-105 hover:shadow-2xl">
-          <div class="flex justify-center">
-            <Icon name={payment.icon} aria-hidden size={32} />
-          </div>
-          <div class="text-xl font-bold">
-            <h3>{payment.title1}</h3>
-            <h3>{payment.title2}</h3>
-          </div>
-          <div class="text-foreground-200">
-            <p>{payment.body1}</p>
-            <p>{payment.body2}</p>
-            <p>{payment.body3}</p>
-          </div>
-          {payment.btn && (
-            <Link
-              href={payment.href}
-              text={payment.btn}
-              class={payment.btnClass}
-              target={"_blank"}
-            />
-          )}
-        </article>
-      ))
-    }
-  </div>
-</ContentWrapper>
+<div
+  class="content-wrapper mx-auto grid max-w-4xl grid-cols-1 gap-x-10 gap-y-6 sm:grid-cols-3"
+>
+  {
+    payments.map((payment) => (
+      <article class="row-span-4 grid grid-rows-subgrid rounded-xl border border-black bg-white p-6 text-center transition hover:scale-105 hover:shadow-2xl">
+        <div class="flex justify-center">
+          <Icon name={payment.icon} aria-hidden size={32} />
+        </div>
+        <div class="text-xl font-bold">
+          <h3>{payment.title1}</h3>
+          <h3>{payment.title2}</h3>
+        </div>
+        <div class="text-foreground-200">
+          <p>{payment.body1}</p>
+          <p>{payment.body2}</p>
+          <p>{payment.body3}</p>
+        </div>
+        {payment.btn && (
+          <Link
+            href={payment.href}
+            text={payment.btn}
+            class={payment.btnClass}
+            target={"_blank"}
+          />
+        )}
+      </article>
+    ))
+  }
+</div>
