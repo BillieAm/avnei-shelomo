@@ -1,0 +1,93 @@
+---
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+
+import { Icon } from "astro-icon/components";
+
+import Link from "@components/Link.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const payments = [
+  {
+    icon: "ph:credit-card",
+    title1: t("payment.credit.title1"),
+    title2: t("payment.credit.title2"),
+    body1: t("payment.credit.body"),
+    body2: "",
+    body3: "",
+    btn: t("payment.credit.btn"),
+    href: "https://www.matara.pro/nedarimplus/online/?mosad=7004358",
+    btnClass: "bg-primary w-full block text-primary-foreground",
+  },
+  {
+    icon: "ph:globe",
+    title1: t("paymnet.abroad.title"),
+    title2: "",
+    body1: t("payment.abroad.body1"),
+    body2: t("payment.abroad.body2"),
+    body3: "",
+    btn: t("payment.abroad.btn"),
+    href: "https://app.atc.fund/?s=donateNow&id=4Y3Y8J",
+    btnClass: "bg-accent w-full block",
+  },
+  {
+    icon: "ph:bank",
+    title1: t("payment.bank.title"),
+    title2: "",
+    body1: t("payment.bank.bank"),
+    body2: t("payment.bank.branch"),
+    body3: t("payment.bank.account"),
+    btn: "",
+    href: "",
+    btnClass: "",
+  },
+];
+
+interface Props {
+  title: string;
+  subtitle?: string;
+}
+
+const { title, subtitle } = Astro.props;
+---
+
+<section>
+  <div class="heading-wrapper">
+    <h1>{title}</h1>
+    <p>
+      {subtitle}
+    </p>
+  </div>
+
+  <div
+    class="content-wrapper mx-auto grid max-w-4xl grid-cols-1 gap-x-10 gap-y-6 sm:grid-cols-3"
+  >
+    {
+      payments.map((payment) => (
+        <article class="row-span-4 grid grid-rows-subgrid rounded-xl border border-black bg-white p-6 text-center transition hover:scale-105 hover:shadow-2xl">
+          <div class="flex justify-center">
+            <Icon name={payment.icon} aria-hidden size={32} />
+          </div>
+          <div class="text-xl font-bold">
+            <h3>{payment.title1}</h3>
+            <h3>{payment.title2}</h3>
+          </div>
+          <div class="text-foreground-200">
+            <p>{payment.body1}</p>
+            <p>{payment.body2}</p>
+            <p>{payment.body3}</p>
+          </div>
+          {payment.btn && (
+            <Link
+              href={payment.href}
+              text={payment.btn}
+              class={payment.btnClass}
+              target={"_blank"}
+            />
+          )}
+        </article>
+      ))
+    }
+  </div>
+</section>

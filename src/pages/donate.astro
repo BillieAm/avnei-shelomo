@@ -1,15 +1,13 @@
 ---
 import Base from "../layouts/Base.astro";
-import Heading from "@components/Heading.astro";
-import Payments from "@components/Payments.astro";
+import DonateContent from "@components/mainContent/DonateContent.astro";
 import AssociationDetails from "@components/AssociationDetails.astro";
 ---
 
 <Base title="Welcome to Astro." description="a page">
-  <Heading
+  <DonateContent
     title="תרומות"
     subtitle="בואו לקחת חלק ולהצטרף למעגל החשוב של תומכינו, באמצעות תרומה באחת מהאפשרויות שלנו."
   />
-  <Payments />
   <AssociationDetails />
 </Base>

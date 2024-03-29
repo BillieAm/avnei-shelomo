@@ -78,6 +78,16 @@
   }
 }
 
+@layer base {
+  h1 {
+    @apply text-5xl font-bold text-primary;
+  }
+
+  h1 + p {
+    @apply text-lg tracking-widest text-foreground-200 md:text-xl;
+  }
+}
+
 @layer components {
   .btn {
     @apply rounded-lg px-6 py-2 font-bold hover:opacity-80;
@@ -86,9 +96,11 @@
   .content-wrapper {
     @apply px-8 py-16;
   }
-}
 
-@layer utilities {
+  .heading-wrapper {
+    @apply container mx-auto flex max-w-2xl flex-col items-center gap-4 text-center;
+  }
+
   /* hamburger/close icon animation */
   .line {
     @apply h-1 w-full rounded-lg bg-nav-foreground transition;
