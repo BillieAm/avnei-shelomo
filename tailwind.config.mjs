@@ -61,10 +61,9 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        titleGradientBg: "hsl(var(--bg-text-gradient))",
       },
       backgroundImage: {
-        titleGradient: "hsl(var(--text-gradient))",
+        "hero-image": "url('../assets/bg/KV2A5895.JPG')",
       },
       borderRadius: {
         lg: "var(--radius)",

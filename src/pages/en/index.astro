@@ -1,9 +1,12 @@
 ---
 import Base from "../../layouts/Base.astro";
+import Hero from "@components/Hero.astro";
+import HomeContent from "@components/mainContent/HomeContent.astro";
 import DonationCTA from "@components/DonationCTA.astro";
 ---
 
 <Base title="Welcome to Astro." description="a page">
-  <h1>Home</h1>
+  <Hero />
+  <HomeContent />
   <DonationCTA />
 </Base>

@@ -17,6 +17,9 @@ export const ui = {
     "nav.donate": "תרומות",
     "header.contact": "צור קשר",
     "logo.ariaLabel": "לעמוד הבית",
+    "hero.title": "אבני שלמה",
+    "hero.subtitle1": "בית מדרש ללימוד הלכה ופנימיות התורה",
+    "hero.subtitle2": "שע״י עמותת ״חסדי גבריאל״",
     "donation.title": "בואו לקחת חלק",
     "donation.body": "הצטרפו למעגל החשוב של תומכינו באמצעות תרומה בטופס מאובטח",
     "donation.btn": "לתרומה",
@@ -50,6 +53,10 @@ export const ui = {
     "nav.donate": "Donate",
     "header.contact": "Contact",
     "logo.ariaLabel": "Go to homepage",
+    "hero.title": "Avnei Shelomo",
+    "hero.subtitle1":
+      "Beth Midrash for studying Halacha and the inner aspects of the Torah",
+    "hero.subtitle2": "",
     "donation.title": "Take Part",
     "donation.body":
       "Join our essential circle of supporters by making a secure donation",

@@ -93,6 +93,10 @@
     @apply rounded-lg px-6 py-2 font-bold hover:opacity-80;
   }
 
+  .main-section-wrapper {
+    @apply pt-28;
+  }
+
   .content-wrapper {
     @apply px-8 py-16;
   }
@@ -117,4 +121,23 @@
   .open .bottom {
     @apply -translate-y-2.5 -rotate-45;
   }
+}
+
+.hero-title-gradient {
+  background-image: var(--text-gradient);
+}
+
+.hero-bg-gradient::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: rgb(0, 30, 51);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 30, 51, 1) 0%,
+    rgba(0, 30, 51, 1) 20%,
+    rgba(0, 30, 51, 0.8) 38%,
+    rgba(0, 30, 51, 0) 100%
+  );
 }

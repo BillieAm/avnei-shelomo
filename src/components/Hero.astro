@@ -1,3 +1,24 @@
 ---
-import "@fontsource/bona-nova";
+import "@fontsource/bona-nova/700.css";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
+
+<!--   -->
+<section
+  class="main-section-wrapper hero-bg-gradient relative isolate grid bg-hero-image bg-cover bg-center pb-60"
+>
+  <div class="heading-wrapper">
+    <h1
+      class="hero-title-gradient inline-block bg-clip-text font-['Bona_Nova',_serif] text-7xl font-bold text-transparent"
+    >
+      {t("hero.title")}
+    </h1>
+    <div class="text-4xl text-nav-foreground">
+      <p>{t("hero.subtitle1")}</p>
+      <p>{t("hero.subtitle2")}</p>
+    </div>
+  </div>
+</section>
