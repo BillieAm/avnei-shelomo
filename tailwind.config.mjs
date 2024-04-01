@@ -63,8 +63,8 @@ export default {
         },
       },
       backgroundImage: {
-        "hero-image": "url('../assets/bg/KV2A5895.jpg')",
-        "marketing-image": "url('../assets/bg/KV2A5892.jpg')",
+        "hero-image": "url('../assets/bg/hero.jpg')",
+        "marketing-image": "url('../assets/bg/donation.jpg')",
       },
       borderRadius: {
         lg: "var(--radius)",
