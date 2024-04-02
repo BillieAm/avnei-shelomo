@@ -1,3 +1,45 @@
 ---
+import Link from "@components/Link.astro";
+import {
+  getLangFromUrl,
+  useTranslations,
+  useTranslatedPath,
+} from "../../i18n/utils";
 
+import { Image } from "astro:assets";
+import refaelImage from "../../assets/misc/refael.jpg";
+
+import { getEntry } from "astro:content";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+
+const entry = await getEntry(lang, "home");
+const { Content } = await entry.render();
 ---
+
+<section
+  class="content-wrapper mx-auto flex max-w-5xl flex-col gap-10 lg:flex-row"
+>
+  <div class="overflow-hidden rounded-3xl lg:min-w-80">
+    <Image src={refaelImage} alt="רפאל כהן" class="h-full object-cover" />
+  </div>
+  <div class="flex flex-col gap-6">
+    <div>
+      <h3 class="mb-4 text-3xl font-bold text-primary">{entry.data.title}</h3>
+      <Content />
+    </div>
+    <div class="flex flex-col gap-6 md:flex-row">
+      <button class="btn bg-primary text-primary-foreground"
+        >{t("video.btn")}</button
+      >
+      <Link
+        href={translatePath("/about/")}
+        text={t("readMore.btn")}
+        icon={t("arrow.icon")}
+        class="border border-primary text-primary"
+      />
+    </div>
+  </div>
+</section>

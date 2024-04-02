@@ -14,7 +14,11 @@ interface Props extends HTMLAttributes<"a"> {
 const { href, text, icon, isBorder, class: className, ...attrs } = Astro.props;
 ---
 
-<a href={href} class:list={["btn", className]} {...attrs}>
+<a
+  href={href}
+  class:list={["btn inline-flex items-center justify-center gap-2", className]}
+  {...attrs}
+>
   {text}
   {icon && <Icon name={icon} class="w-6" />}
 </a>

@@ -42,6 +42,9 @@ export const ui = {
     "footer.aria.phone": "שיחת טלפון",
     "footer.address": "רח׳ רבן יוחנן בן זכאי 37, אלעד",
     "footer.rights": "חסדי גבריאל - אבני שלמה",
+    "video.btn": "לצפיה בסרטון",
+    "readMore.btn": "להמשך קריאה",
+    "arrow.icon": "ph:arrow-left",
   },
   en: {
     "association.name": "Chasadai Gavriel",
@@ -81,5 +84,8 @@ export const ui = {
     "footer.aria.phone": "phone call",
     "footer.address": "37 Raban Yohanan Ben Zakai street, El'ad, Israel",
     "footer.rights": "Chasadai Gavriel - Avnei Shelomo",
+    "video.btn": "Watch Video",
+    "readMore.btn": "Read More",
+    "arrow.icon": "ph:arrow-right",
   },
 } as const;
