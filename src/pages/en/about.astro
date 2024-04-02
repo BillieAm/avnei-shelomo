@@ -1,11 +1,15 @@
 ---
 import Base from "../../layouts/Base.astro";
+import AboutIntro from "@components/AboutIntro.astro";
 import AboutContent from "@components/mainContent/AboutContent.astro";
 import DonationCTA from "@components/DonationCTA.astro";
 ---
 
 <Base title="Welcome to Astro." description="a page">
-  <h1>About</h1>
+  <AboutIntro
+    title="About The Kollel"
+    subtitle='The head of the Kollel and the "Chasdai Gavriel" institutions about the Kollel, the study, and the vision.'
+  />
   <AboutContent />
   <DonationCTA />
 </Base>

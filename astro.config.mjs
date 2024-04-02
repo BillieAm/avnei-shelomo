@@ -29,6 +29,8 @@ export default defineConfig({
           "bank",
           "credit-card",
           "globe",
+          "moon-fill",
+          "sun-fill",
         ],
       },
     }),

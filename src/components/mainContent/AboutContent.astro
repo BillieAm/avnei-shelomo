@@ -13,15 +13,16 @@ const { Content } = await entry.render();
 ---
 
 <section
-  class="content-wrapper mx-auto flex max-w-5xl flex-col gap-10 lg:flex-row"
+  class="content-wrapper mx-auto flex max-w-5xl flex-col items-center gap-10 md:flex-row md:items-start"
 >
-  <div class="overflow-hidden lg:min-w-80">
+  <div class="">
     <Image
       src={refaelImage}
       alt="רפאל כהן"
-      class="aspect-square rounded-bl-full object-cover"
+      class="aspect-square rounded-3xl object-cover"
     />
   </div>
+
   <div>
     <Content />
   </div>

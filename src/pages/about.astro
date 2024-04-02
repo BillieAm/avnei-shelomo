@@ -1,11 +1,15 @@
 ---
 import Base from "../layouts/Base.astro";
+import AboutIntro from "@components/AboutIntro.astro";
 import AboutContent from "@components/mainContent/AboutContent.astro";
 import DonationCTA from "@components/DonationCTA.astro";
 ---
 
 <Base title="Welcome to Astro." description="a page">
-  <h1>אודות</h1>
+  <AboutIntro
+    title="אודות הכולל"
+    subtitle="דברי ראש הכולל ומוסדות ״חסדי גבריאל״, על הכולל, הלימוד והחזון."
+  />
   <AboutContent />
   <DonationCTA />
 </Base>

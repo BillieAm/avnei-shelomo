@@ -1,0 +1,23 @@
+---
+import ImageToggle from "./ImageToggle";
+
+interface Props {
+  title: string;
+  subtitle?: string;
+}
+
+const { title, subtitle } = Astro.props;
+---
+
+<section
+  class="flex flex-col items-center gap-10 pt-28 md:flex-row md:pt-20 lg:gap-20"
+>
+  <div class="heading-wrapper">
+    <h1>{title}</h1>
+    <p>
+      {subtitle}
+    </p>
+  </div>
+
+  <ImageToggle client:load />
+</section>
