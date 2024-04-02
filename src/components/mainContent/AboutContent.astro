@@ -1,0 +1,28 @@
+---
+import { getLangFromUrl } from "../../i18n/utils";
+
+import { Image } from "astro:assets";
+import refaelImage from "../../assets/misc/refael2.jpg";
+
+import { getEntry } from "astro:content";
+
+const lang = getLangFromUrl(Astro.url);
+
+const entry = await getEntry(lang, "about");
+const { Content } = await entry.render();
+---
+
+<section
+  class="content-wrapper mx-auto flex max-w-5xl flex-col gap-10 lg:flex-row"
+>
+  <div class="overflow-hidden lg:min-w-80">
+    <Image
+      src={refaelImage}
+      alt="רפאל כהן"
+      class="aspect-square rounded-bl-full object-cover"
+    />
+  </div>
+  <div>
+    <Content />
+  </div>
+</section>
