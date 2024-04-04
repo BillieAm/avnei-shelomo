@@ -45,6 +45,8 @@ export const ui = {
     "video.btn": "לצפיה בסרטון",
     "readMore.btn": "להמשך קריאה",
     "arrow.icon": "ph:arrow-left",
+    "tes.title": "ממליצים",
+    "tes.btn": "לצפיה",
   },
   en: {
     "association.name": "Chasadai Gavriel",
@@ -56,10 +58,9 @@ export const ui = {
     "nav.donate": "Donate",
     "header.contact": "Contact",
     "logo.ariaLabel": "Go to homepage",
-    "hero.title": "Avnei Shelomo",
+    "hero.title": "AVNEI SHELOMO",
     "hero.subtitle1":
       "Beth Midrash for studying Halacha and the inner aspects of the Torah",
-    "hero.subtitle2": "",
     "donation.title": "Take Part",
     "donation.body":
       "Join our essential circle of supporters by making a secure donation",
@@ -87,5 +88,7 @@ export const ui = {
     "video.btn": "Watch Video",
     "readMore.btn": "Read More",
     "arrow.icon": "ph:arrow-right",
+    "tes.title": "Testimonials",
+    "tes.btn": "View",
   },
 } as const;

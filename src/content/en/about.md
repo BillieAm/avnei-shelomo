@@ -8,9 +8,9 @@ I ask you to become a partner in the Hatzlacha of this unique Kollel and in supp
 
 The Zechut of the Leshem will strengthen you and your family for all time.
 
-Thank you very much & Tizku l'Mitzvot
+**Thank you very much & Tizku l'Mitzvot**
 
-Refael Cohen
+**Refael Cohen**
 
 Rosh Mosdot "Chasdai Gavriel"
 

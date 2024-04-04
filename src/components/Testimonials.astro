@@ -1,0 +1,34 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const testimonialsList = [
+  { name: "אהרן מיטלמן", title: "רב קרית אבי עזרי - מודיעין עלית" },
+  { name: "Rabbi Dr.Akiva Tatz", title: "" },
+  { name: "מרדכי גרוס", title: "" },
+  { name: "מרדכי עטיה", title: "ראש ישיבת ״החיים והשלום״" },
+];
+---
+
+<section class="container py-8 text-center">
+  <h3 class="text-2xl font-bold tracking-widest text-foreground-200">
+    {t("tes.title")}
+  </h3>
+  <div
+    class="grid auto-cols-[20ch] grid-flow-col gap-8 overflow-x-auto overscroll-x-contain py-10 lg:inline-grid"
+  >
+    {
+      testimonialsList.map((tes) => (
+        <article class="grid gap-4 rounded-2xl bg-gradient-to-b from-primary/50 p-4 shadow">
+          <h4 class="font-bold">{tes.name}</h4>
+          {tes.title && <p>{tes.title}</p>}
+          <button class="self-end rounded-lg border border-foreground px-4 py-1 hover:bg-background">
+            {t("tes.btn")}
+          </button>
+        </article>
+      ))
+    }
+  </div>
+</section>

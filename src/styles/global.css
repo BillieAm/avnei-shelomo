@@ -102,7 +102,7 @@
   }
 
   .heading-wrapper {
-    @apply container mx-auto flex max-w-2xl flex-col items-center gap-4 text-center;
+    @apply container mx-auto flex max-w-3xl flex-col items-center gap-4 text-center;
   }
 
   /* hamburger/close icon animation */

@@ -1,4 +1,6 @@
 ---
+import { getLangFromUrl } from "../i18n/utils";
+
 import ImageToggle from "./ImageToggle";
 
 interface Props {
@@ -7,6 +9,7 @@ interface Props {
 }
 
 const { title, subtitle } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
 ---
 
 <section
@@ -19,5 +22,5 @@ const { title, subtitle } = Astro.props;
     </p>
   </div>
 
-  <ImageToggle client:load />
+  <ImageToggle client:load lang={lang} />
 </section>
