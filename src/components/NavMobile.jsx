@@ -38,6 +38,7 @@ export default function NavMobile({ routesList, transContact }) {
             <li>
               <a
                 href="#contact"
+                onClick={() => isNavMobileOpen.set(!$isNavMobileOpen)}
                 className="block w-full uppercase outline-offset-4 outline-accent"
               >
                 {transContact}
