@@ -11,6 +11,8 @@ import refaelImage from "../../assets/misc/refael.jpg";
 
 import { getEntry } from "astro:content";
 
+import VideoModal from "@components/VideoModal";
+
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
@@ -31,9 +33,12 @@ const { Content } = await entry.render();
       <Content />
     </div>
     <div class="flex flex-col gap-6 sm:flex-row">
-      <button class="btn bg-primary text-primary-foreground"
-        >{t("video.btn")}</button
-      >
+      <VideoModal
+        client:load
+        contentSrc="https://gavriel.kvod.co.il/player/2omskim9"
+        btnText={t("video.btn")}
+        btnClass="btn w-full bg-primary text-primary-foreground"
+      />
       <Link
         href={translatePath("/about/")}
         text={t("readMore.btn")}
