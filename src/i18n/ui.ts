@@ -61,7 +61,7 @@ export const ui = {
     "hero.title": "AVNEI SHELOMO",
     "hero.subtitle1":
       "Beth Midrash for studying Halacha and the inner aspects of the Torah",
-    "hero.subtitle2": "",
+    "hero.subtitle2": "Chasadai Gavriel foundation",
     "donation.title": "Take Part",
     "donation.body":
       "Join our essential circle of supporters by making a secure donation",
