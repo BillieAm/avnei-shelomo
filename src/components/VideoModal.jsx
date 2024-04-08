@@ -45,7 +45,7 @@ export default function VideoModal({ contentSrc, btnText, btnClass }) {
         onClick={handleClickOutside}
         className="bg-transparent backdrop:bg-foreground/70"
       >
-        <button onClick={closeModal} className="mb-4">
+        <button onClick={closeModal} aria-label="close" className="mb-4">
           <X color="white" strokeWidth={4} />
         </button>
         <div className="flex">

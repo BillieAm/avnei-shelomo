@@ -1,28 +1,47 @@
 ---
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
+import ImageModal from "@components/ImageModal";
+
+import { Image } from "astro:assets";
+import gross from "../assets/testimonials/mordechai-gross.jpg";
+import tatz from "../assets/testimonials/akiva-tatz.jpg";
+import rozin from "../assets/testimonials/dov-rozin.jpg";
+import attia from "../assets/testimonials/mordechai-attia.jpg";
+import mittelman from "../assets/testimonials/aharon-mittelman.jpg";
+import friedman from "../assets/testimonials/yoel-friedman.jpg";
+
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const testimonialsList = {
   he: [
-    { name: "הרב מרדכי גרוס", title: "" },
-    { name: "הרב ד״ר עקיבא טץ", title: "" },
+    { name: "הרב מרדכי גרוס", title: "", image: gross },
+    { name: "הרב ד״ר עקיבא טץ", title: "", image: tatz },
     {
       name: "הרב דב רוזין",
       title: "רב ומו״ץ שכונת דרך החיים והאיזור וראש כולל דרך ההוראה",
+      image: rozin,
     },
-    { name: "הרב מרדכי עטיה", title: "ראש ישיבת ״החיים והשלום״" },
-    { name: "הרב אהרן מיטלמן", title: "רב קרית אבי עזרי - מודיעין עלית" },
-    { name: "הרב יואל פרידמן", title: "רב שכונת חזון איש, אבן האזל, אלעד" },
+    { name: "הרב מרדכי עטיה", title: "ראש ישיבת ״החיים והשלום״", image: attia },
+    {
+      name: "הרב אהרן מיטלמן",
+      title: "רב קרית אבי עזרי - מודיעין עלית",
+      image: mittelman,
+    },
+    {
+      name: "הרב יואל פרידמן",
+      title: "רב שכונת חזון איש, אבן האזל, אלעד",
+      image: friedman,
+    },
   ],
   en: [
-    { name: "Rabbi Mordechai Gross", title: "" },
-    { name: "Rabbi Dr.Akiva Tatz", title: "" },
-    { name: "Rabbi Dov Rozin", title: "" },
-    { name: "Rabbi Mordechai Attia", title: "" },
-    { name: "Rabbi Aharon Mittelman", title: "" },
-    { name: "Rabbi Yoel Friedman", title: "" },
+    { name: "Rabbi Mordechai Gross", title: "", image: gross },
+    { name: "Rabbi Dr.Akiva Tatz", title: "", image: tatz },
+    { name: "Rabbi Dov Rozin", title: "", image: rozin },
+    { name: "Rabbi Mordechai Attia", title: "", image: attia },
+    { name: "Rabbi Aharon Mittelman", title: "", image: mittelman },
+    { name: "Rabbi Yoel Friedman", title: "", image: friedman },
   ],
 };
 ---
@@ -32,16 +51,20 @@ const testimonialsList = {
     {t("tes.title")}
   </h3>
   <div
-    class="grid auto-cols-[20ch] grid-flow-col gap-8 overflow-x-auto overscroll-x-contain py-10 lg:inline-grid"
+    class="grid auto-cols-[20ch] grid-flow-col gap-8 overflow-x-auto overscroll-x-contain py-10"
   >
     {
       testimonialsList[lang].map((tes) => (
         <article class="grid gap-4 rounded-2xl bg-gradient-to-b from-primary/50 p-4 shadow">
           <h4 class="font-bold">{tes.name}</h4>
           {tes.title && <p>{tes.title}</p>}
-          <button class="self-end rounded-lg border border-foreground px-4 py-1 hover:bg-background">
-            {t("tes.btn")}
-          </button>
+          <ImageModal
+            client:load
+            btnText={t("tes.btn")}
+            btnClass="rounded-lg border border-foreground px-4 py-1 hover:bg-background"
+          >
+            <Image src={tes.image} alt={`${tes.name}'s testimonial`} />
+          </ImageModal>
         </article>
       ))
     }
