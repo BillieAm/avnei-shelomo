@@ -43,10 +43,10 @@ export default function VideoModal({ contentSrc, btnText, btnClass }) {
       <dialog
         ref={dialogRef}
         onClick={handleClickOutside}
-        className="bg-transparent backdrop:bg-foreground/70"
+        className="rounded-xl backdrop:backdrop-blur-xl"
       >
-        <button onClick={closeModal} aria-label="close" className="mb-4">
-          <X color="white" strokeWidth={4} />
+        <button onClick={closeModal} aria-label="close" className="p-2">
+          <X strokeWidth={3} />
         </button>
         <div className="flex">
           <iframe
