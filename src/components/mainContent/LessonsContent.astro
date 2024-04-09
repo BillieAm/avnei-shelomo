@@ -1,0 +1,20 @@
+---
+import AudioLessons from "../AudioLessons.astro";
+
+interface Props {
+  title: string;
+  subtitle?: string;
+}
+
+const { title, subtitle } = Astro.props;
+---
+
+<section class="main-section-wrapper">
+  <div class="heading-wrapper">
+    <h1>{title}</h1>
+    <p>
+      {subtitle}
+    </p>
+  </div>
+  <AudioLessons />
+</section>

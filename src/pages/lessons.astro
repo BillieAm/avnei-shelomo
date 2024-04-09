@@ -1,9 +1,17 @@
 ---
 import Base from "../layouts/Base.astro";
+import LessonsContent from "@components/mainContent/LessonsContent.astro";
 import DonationCTA from "@components/DonationCTA.astro";
 ---
 
-<Base bgColor="bg-orange-100" title="Welcome to Astro." description="a page">
-  <h1>שיעורים</h1>
+<Base
+  bgColor="bg-orange-100"
+  title="שיעורים"
+  description="שיעורי וידאו ואודיו מפי הרב רפאל כהן, ראש המוסדות והכולל"
+>
+  <LessonsContent
+    title="שיעורים"
+    subtitle="שיעורי וידאו ואודיו מפי הרב רפאל כהן, ראש המוסדות והכולל"
+  />
   <DonationCTA />
 </Base>
