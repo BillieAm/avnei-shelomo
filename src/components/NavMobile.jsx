@@ -29,6 +29,7 @@ export default function NavMobile({ routesList, transContact }) {
               <li className="w-full">
                 <a
                   href={route.path}
+                  onClick={() => isNavMobileOpen.set(!$isNavMobileOpen)}
                   className="block w-full uppercase outline-offset-4 outline-accent"
                 >
                   {route.name}

@@ -23,15 +23,15 @@ export const ui = {
     "donation.title": "בואו לקחת חלק",
     "donation.body": "הצטרפו למעגל החשוב של תומכינו באמצעות תרומה בטופס מאובטח",
     "donation.btn": "לתרומה",
-    "payment.credit.title1": "כרטיס אשראי",
-    "payment.credit.title2": "או הו״ק בנקאית",
+    "payment.credit.title": "כרטיס אשראי או הו״ק בנקאית",
     "payment.credit.body":
       "באמצעות הטופס המאובטח שלנו תוכלו לתרום בכרטיס אשראי או בהוראת קבע בבנק",
     "payment.credit.btn": "לתרומה בארץ",
     "paymnet.abroad.title": "תרומה מחו״ל",
     "payment.abroad.body1": "נמצאים בחו״ל?",
     "payment.abroad.body2": "תרמו באמצעות הטופס המאובטח שלנו דרך העמותה בחו״ל",
-    "payment.abroad.btn": "לתרומה בחו״ל",
+    "payment.abroad.btn.us": "ארה״ב",
+    "payment.abroad.btn.uk": "אנגליה",
     "payment.bank.title": "העברה בנקאית",
     "payment.bank.bank": "בנק פאגי (52)",
     "payment.bank.branch": "סניף 188",
@@ -66,8 +66,7 @@ export const ui = {
     "donation.body":
       "Join our essential circle of supporters by making a secure donation",
     "donation.btn": "Donate",
-    "payment.credit.title1": "Credit card",
-    "payment.credit.title2": "or direct debit",
+    "payment.credit.title": "Credit card or direct debit",
     "payment.credit.body":
       "Make a donation by using our secure form and paying through either credit card or bank direct debit",
     "payment.credit.btn": "Donate",
@@ -75,7 +74,8 @@ export const ui = {
     "payment.abroad.body1": "Donating from abroad?",
     "payment.abroad.body2":
       "Use our secure form through our association abroad",
-    "payment.abroad.btn": "Donate",
+    "payment.abroad.btn.us": "USA",
+    "payment.abroad.btn.uk": "UK",
     "payment.bank.title": "Bank transfer",
     "payment.bank.bank": "Pagi bank (52)",
     "payment.bank.branch": "Branch 188",

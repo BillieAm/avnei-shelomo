@@ -1,0 +1,22 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  icon: string;
+  title: string;
+}
+
+const { icon, title } = Astro.props;
+---
+
+<article
+  class="row-span-4 grid grid-rows-subgrid rounded-xl border border-black bg-white p-6 text-center"
+>
+  <div class="flex justify-center">
+    <Icon name={icon} aria-hidden size={32} />
+  </div>
+  <div class="text-xl font-bold">
+    <h3>{title}</h3>
+  </div>
+  <slot />
+</article>

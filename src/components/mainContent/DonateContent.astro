@@ -1,48 +1,11 @@
 ---
 import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 
-import { Icon } from "astro-icon/components";
-
 import Link from "@components/Link.astro";
+import DonationCard from "@components/DonationCard.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-
-const payments = [
-  {
-    icon: "ph:credit-card",
-    title1: t("payment.credit.title1"),
-    title2: t("payment.credit.title2"),
-    body1: t("payment.credit.body"),
-    body2: "",
-    body3: "",
-    btn: t("payment.credit.btn"),
-    href: "https://www.matara.pro/nedarimplus/online/?mosad=7004358",
-    btnClass: "bg-primary w-full block text-primary-foreground",
-  },
-  {
-    icon: "ph:globe",
-    title1: t("paymnet.abroad.title"),
-    title2: "",
-    body1: t("payment.abroad.body1"),
-    body2: t("payment.abroad.body2"),
-    body3: "",
-    btn: t("payment.abroad.btn"),
-    href: "https://app.atc.fund/?s=donateNow&id=4Y3Y8J",
-    btnClass: "bg-accent w-full block",
-  },
-  {
-    icon: "ph:bank",
-    title1: t("payment.bank.title"),
-    title2: "",
-    body1: t("payment.bank.bank"),
-    body2: t("payment.bank.branch"),
-    body3: t("payment.bank.account"),
-    btn: "",
-    href: "",
-    btnClass: "",
-  },
-];
 
 interface Props {
   title: string;
@@ -60,34 +23,52 @@ const { title, subtitle } = Astro.props;
     </p>
   </div>
 
+  <!-- Payment methods -->
   <div
     class="content-wrapper mx-auto grid max-w-4xl grid-cols-1 gap-x-10 gap-y-6 sm:grid-cols-3"
   >
-    {
-      payments.map((payment) => (
-        <article class="row-span-4 grid grid-rows-subgrid rounded-xl border border-black bg-white p-6 text-center transition hover:scale-105 hover:shadow-2xl">
-          <div class="flex justify-center">
-            <Icon name={payment.icon} aria-hidden size={32} />
-          </div>
-          <div class="text-xl font-bold">
-            <h3>{payment.title1}</h3>
-            <h3>{payment.title2}</h3>
-          </div>
-          <div class="text-foreground-200">
-            <p>{payment.body1}</p>
-            <p>{payment.body2}</p>
-            <p>{payment.body3}</p>
-          </div>
-          {payment.btn && (
-            <Link
-              href={payment.href}
-              text={payment.btn}
-              class={payment.btnClass}
-              target={"_blank"}
-            />
-          )}
-        </article>
-      ))
-    }
+    <!-- Credit card  -->
+    <DonationCard icon="ph:credit-card" title={t("payment.credit.title")}>
+      <div class="text-foreground-200">
+        <p>{t("payment.credit.body")}</p>
+      </div>
+      <Link
+        href="https://www.matara.pro/nedarimplus/online/?mosad=7004358"
+        text={t("payment.credit.btn")}
+        class="block w-full self-end bg-primary text-primary-foreground"
+        target={"_blank"}
+      />
+    </DonationCard>
+
+    <!-- Abroad -->
+    <DonationCard icon="ph:globe" title={t("paymnet.abroad.title")}>
+      <div class="text-foreground-200">
+        <p>{t("payment.abroad.body1")}</p>
+        <p>{t("payment.abroad.body2")}</p>
+      </div>
+      <div class="flex flex-col gap-4">
+        <Link
+          href="https://app.atc.fund/?s=donateNow&id=4Y3Y8J"
+          text={t("payment.abroad.btn.us")}
+          class="block w-full bg-accent text-accent-foreground"
+          target={"_blank"}
+        />
+        <Link
+          href="http://donate.achisomoch.org/6581"
+          text={t("payment.abroad.btn.uk")}
+          class="block w-full bg-accent text-accent-foreground"
+          target={"_blank"}
+        />
+      </div>
+    </DonationCard>
+
+    <!-- Bank transfer -->
+    <DonationCard icon="ph:bank" title={t("payment.bank.title")}>
+      <div class="text-foreground-200">
+        <p>{t("payment.bank.bank")}</p>
+        <p>{t("payment.bank.branch")}</p>
+        <p>{t("payment.bank.account")}</p>
+      </div>
+    </DonationCard>
   </div>
 </section>

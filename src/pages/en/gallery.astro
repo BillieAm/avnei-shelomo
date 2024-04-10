@@ -1,9 +1,17 @@
 ---
 import Base from "../../layouts/Base.astro";
+import GalleryContent from "@components/mainContent/GalleryContent.astro";
 import DonationCTA from "@components/DonationCTA.astro";
 ---
 
-<Base bgColor="bg-sky-100" title="Welcome to Astro." description="a page">
-  <h1>Gallery</h1>
+<Base
+  bgColor="bg-sky-100"
+  title="Gallery"
+  description="A taste of the Kollel's atmosphere"
+>
+  <GalleryContent
+    title="Gallery"
+    subtitle="A taste of the Kollel's atmosphere"
+  />
   <DonationCTA />
 </Base>
