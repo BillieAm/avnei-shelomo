@@ -1,4 +1,6 @@
 ---
+import GalleryContainer from "@components/GalleryContainer";
+
 interface Props {
   title: string;
   subtitle?: string;
@@ -14,4 +16,5 @@ const { title, subtitle } = Astro.props;
       {subtitle}
     </p>
   </div>
+  <GalleryContainer client:idle />
 </section>
