@@ -5,7 +5,7 @@ export default function Tabs({ tabs, activeTab, setActiveTab }) {
         <button
           key={index}
           onClick={() => setActiveTab(tab)}
-          className={`w-full rounded-xl p-4 py-2 ${activeTab === tab && "bg-background text-primary ring-2"} ${activeTab !== tab && "hover:bg-white/20"}`}
+          className={`rounded-xl p-4 py-2 ${activeTab === tab && "bg-background text-primary ring-2"} ${activeTab !== tab && "hover:bg-white/20"}`}
         >
           {tab}
         </button>
