@@ -2,12 +2,7 @@ import { useRef } from "preact/hooks";
 
 import { X } from "lucide-preact";
 
-export default function ImageModal({
-  children,
-  wrapperClass,
-  btnClass,
-  btnText,
-}) {
+export default function Dialog(props) {
   const dialogRef = useRef(null);
 
   const openModal = () => {
@@ -25,10 +20,10 @@ export default function ImageModal({
   };
 
   return (
-    <div className={wrapperClass}>
-      <button onClick={openModal} className={btnClass}>
-        {btnText}
-      </button>
+    <>
+      <div onClick={openModal} className={props.wrapperClass}>
+        {props.trigger}
+      </div>
       <dialog
         ref={dialogRef}
         onClick={handleClickOutside}
@@ -37,8 +32,8 @@ export default function ImageModal({
         <button onClick={closeModal} aria-label="close" className="block p-2">
           <X color="white" strokeWidth={4} />
         </button>
-        {children}
+        {props.content}
       </dialog>
-    </div>
+    </>
   );
 }

@@ -1,15 +1,15 @@
 ---
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
-import ImageModal from "@components/ImageModal";
+import Dialog from "@components/Dialog";
 
 import { Image } from "astro:assets";
-import gross from "../assets/testimonials/mordechai-gross.jpg";
-import tatz from "../assets/testimonials/akiva-tatz.jpg";
-import rozin from "../assets/testimonials/dov-rozin.jpg";
-import attia from "../assets/testimonials/mordechai-attia.jpg";
-import mittelman from "../assets/testimonials/aharon-mittelman.jpg";
-import friedman from "../assets/testimonials/yoel-friedman.jpg";
+import gross from "../assets/testimonials/mordechai-gross.webp";
+import tatz from "../assets/testimonials/akiva-tatz.webp";
+import rozin from "../assets/testimonials/dov-rozin.webp";
+import attia from "../assets/testimonials/mordechai-attia.webp";
+import mittelman from "../assets/testimonials/aharon-mittelman.webp";
+import friedman from "../assets/testimonials/yoel-friedman.webp";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -58,14 +58,27 @@ const testimonialsList = {
         <article class="grid gap-4 rounded-2xl bg-gradient-to-b from-primary/50 p-4 shadow">
           <h4 class="font-bold">{tes.name}</h4>
           {tes.title && <p>{tes.title}</p>}
-          <ImageModal
+          {/* <ImageModal
             client:load
             wrapperClass="self-end"
             btnText={t("tes.btn")}
             btnClass="rounded-lg border border-foreground px-4 py-1 hover:bg-background"
           >
             <Image src={tes.image} alt={`${tes.name}'s testimonial`} />
-          </ImageModal>
+          </ImageModal> */}
+          <Dialog wrapperClass="self-end" client:load>
+            <button
+              slot="trigger"
+              class="rounded-lg border border-foreground px-4 py-1 hover:bg-background"
+            >
+              {t("tes.btn")}
+            </button>
+            <Image
+              src={tes.image}
+              alt={`${tes.name}'s testimonial`}
+              slot="content"
+            />
+          </Dialog>
         </article>
       ))
     }
