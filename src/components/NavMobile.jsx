@@ -1,8 +1,7 @@
-import { useStore } from "@nanostores/preact";
-import { isNavMobileOpen } from "../store";
+import { useState } from "react";
 
 export default function NavMobile({ routesList, transContact }) {
-  const $isNavMobileOpen = useStore(isNavMobileOpen);
+  const [isNavMobileOpen, setIsNavMobileOpen] = useState(false);
 
   return (
     <div>
@@ -10,16 +9,16 @@ export default function NavMobile({ routesList, transContact }) {
         aria-label={!isNavMobileOpen ? "פתיחת תפריט" : "סגירת תפריט"}
         aria-expanded={isNavMobileOpen}
         aria-controls="mainNav"
-        onClick={() => isNavMobileOpen.set(!$isNavMobileOpen)}
+        onClick={() => setIsNavMobileOpen(!isNavMobileOpen)}
         className={`relative z-50 flex h-6 w-6 flex-col items-center justify-between justify-self-start ${
-          $isNavMobileOpen && "open"
+          isNavMobileOpen && "open"
         }`}
       >
         <span className="line top" aria-hidden="true"></span>
         <span className="line middle" aria-hidden="true"></span>
         <span className="line bottom" aria-hidden="true"></span>
       </button>
-      {!$isNavMobileOpen ? null : (
+      {!isNavMobileOpen ? null : (
         <nav
           id="mainNav"
           className="absolute inset-x-0 top-0 z-10 border-b-4 border-b-primary bg-nav pb-8 pt-28"
@@ -29,7 +28,7 @@ export default function NavMobile({ routesList, transContact }) {
               <li className="w-full">
                 <a
                   href={route.path}
-                  onClick={() => isNavMobileOpen.set(!$isNavMobileOpen)}
+                  onClick={() => setIsNavMobileOpen(!isNavMobileOpen)}
                   className="block w-full uppercase outline-offset-4 outline-accent"
                 >
                   {route.name}
@@ -39,7 +38,7 @@ export default function NavMobile({ routesList, transContact }) {
             <li>
               <a
                 href="#contact"
-                onClick={() => isNavMobileOpen.set(!$isNavMobileOpen)}
+                onClick={() => setIsNavMobileOpen(!isNavMobileOpen)}
                 className="block w-full uppercase outline-offset-4 outline-accent"
               >
                 {transContact}

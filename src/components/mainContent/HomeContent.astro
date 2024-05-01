@@ -6,8 +6,16 @@ import {
   useTranslatedPath,
 } from "../../i18n/utils";
 
+import Testimonial from "@components/Testimonial";
+
 import { Image } from "astro:assets";
 import refaelImage from "../../assets/misc/refael.jpg";
+import gross from "../../assets/testimonials/mordechai-gross.webp";
+import tatz from "../../assets/testimonials/akiva-tatz.webp";
+import rozin from "../../assets/testimonials/dov-rozin.webp";
+import attia from "../../assets/testimonials/mordechai-attia.webp";
+import mittelman from "../../assets/testimonials/aharon-mittelman.webp";
+import friedman from "../../assets/testimonials/yoel-friedman.webp";
 
 import { getEntry } from "astro:content";
 
@@ -19,8 +27,40 @@ const translatePath = useTranslatedPath(lang);
 
 const entry = await getEntry(lang, "home");
 const { Content } = await entry.render();
+
+const testimonialsList = {
+  he: [
+    { name: "הרב מרדכי גרוס", title: "", image: gross },
+    { name: "הרב ד״ר עקיבא טץ", title: "", image: tatz },
+    {
+      name: "הרב דב רוזין",
+      title: "רב ומו״ץ שכונת דרך החיים והאיזור וראש כולל דרך ההוראה",
+      image: rozin,
+    },
+    { name: "הרב מרדכי עטיה", title: "ראש ישיבת ״החיים והשלום״", image: attia },
+    {
+      name: "הרב אהרן מיטלמן",
+      title: "רב קרית אבי עזרי - מודיעין עלית",
+      image: mittelman,
+    },
+    {
+      name: "הרב יואל פרידמן",
+      title: "רב שכונת חזון איש, אבן האזל, אלעד",
+      image: friedman,
+    },
+  ],
+  en: [
+    { name: "Rabbi Mordechai Gross", title: "", image: gross },
+    { name: "Rabbi Dr.Akiva Tatz", title: "", image: tatz },
+    { name: "Rabbi Dov Rozin", title: "", image: rozin },
+    { name: "Rabbi Mordechai Attia", title: "", image: attia },
+    { name: "Rabbi Aharon Mittelman", title: "", image: mittelman },
+    { name: "Rabbi Yoel Friedman", title: "", image: friedman },
+  ],
+};
 ---
 
+<!-- Refael -->
 <section
   class="content-wrapper mx-auto flex max-w-5xl flex-col gap-10 lg:flex-row"
 >
@@ -46,5 +86,21 @@ const { Content } = await entry.render();
         class="border border-primary text-primary"
       />
     </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="container py-8 text-center">
+  <h3 class="text-2xl font-bold tracking-widest text-foreground-200">
+    {t("tes.title")}
+  </h3>
+  <div
+    class="grid auto-cols-[20ch] grid-flow-col gap-8 overflow-x-auto overscroll-x-contain py-10"
+  >
+    {
+      testimonialsList[lang].map((tes) => (
+        <Testimonial client:load tesData={tes} btnText={t("tes.btn")} />
+      ))
+    }
   </div>
 </section>

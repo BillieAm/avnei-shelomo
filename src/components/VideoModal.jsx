@@ -1,6 +1,6 @@
-import { useRef, useEffect } from "preact/hooks";
+import { useRef, useEffect } from "react";
 
-import { X } from "lucide-preact";
+import { X } from "lucide-react";
 
 export default function VideoModal({ contentSrc, btnText, btnClass }) {
   const dialogRef = useRef(null);

@@ -1,8 +1,8 @@
 import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
-import preact from "@astrojs/preact";
-
 import icon from "astro-icon";
+
+import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
@@ -10,29 +10,12 @@ export default defineConfig({
     defaultLocale: "he",
     locales: ["he", "en"],
     routing: {
-      prefixDefaultLocale: false,
-    },
+      prefixDefaultLocale: false
+    }
   },
-  integrations: [
-    tailwind(),
-    preact(),
-    icon({
-      include: {
-        ph: [
-          "play",
-          "arrow-left",
-          "arrow-right",
-          "phone",
-          "whatsapp-logo",
-          "envelope-simple",
-          "map-pin",
-          "bank",
-          "credit-card",
-          "globe",
-          "moon-fill",
-          "sun-fill",
-        ],
-      },
-    }),
-  ],
+  integrations: [tailwind(), icon({
+    include: {
+      ph: ["play", "arrow-left", "arrow-right", "phone", "whatsapp-logo", "envelope-simple", "map-pin", "bank", "credit-card", "globe", "moon-fill", "sun-fill"]
+    }
+  }), react()]
 });
