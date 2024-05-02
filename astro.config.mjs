@@ -10,12 +10,34 @@ export default defineConfig({
     defaultLocale: "he",
     locales: ["he", "en"],
     routing: {
-      prefixDefaultLocale: false
-    }
+      prefixDefaultLocale: false,
+    },
   },
-  integrations: [tailwind(), icon({
-    include: {
-      ph: ["play", "arrow-left", "arrow-right", "phone", "whatsapp-logo", "envelope-simple", "map-pin", "bank", "credit-card", "globe", "moon-fill", "sun-fill"]
-    }
-  }), react()]
+  vite: {
+    build: {
+      base: "/",
+    },
+  },
+  integrations: [
+    tailwind(),
+    icon({
+      include: {
+        ph: [
+          "play",
+          "arrow-left",
+          "arrow-right",
+          "phone",
+          "whatsapp-logo",
+          "envelope-simple",
+          "map-pin",
+          "bank",
+          "credit-card",
+          "globe",
+          "moon-fill",
+          "sun-fill",
+        ],
+      },
+    }),
+    react(),
+  ],
 });
