@@ -12,10 +12,10 @@ export default function GalleryContainer({ translatedTabs }) {
     let images;
     switch (album) {
       case albums[0]:
-        images = import.meta.glob("./src/assets/gallery/the-beginning/*.webp");
+        images = import.meta.glob("/src/assets/gallery/the-beginning/*.webp");
         break;
       case albums[1]:
-        images = import.meta.glob("./src/assets/gallery/test/*.webp");
+        images = import.meta.glob("/src/assets/gallery/test/*.webp");
         break;
     }
 
