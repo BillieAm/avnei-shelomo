@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import Tabs from "@components/Tabs";
+import Tabs from "./Tabs";
 import GalleryImage from "./GalleryImage";
 
 export default function GalleryContainer({ translatedTabs }) {

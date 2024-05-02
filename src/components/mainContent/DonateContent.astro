@@ -1,8 +1,8 @@
 ---
 import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 
-import Link from "@components/Link.astro";
-import DonationCard from "@components/DonationCard.astro";
+import Link from "../Link.astro";
+import DonationCard from "../DonationCard.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);

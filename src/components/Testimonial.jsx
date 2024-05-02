@@ -1,6 +1,6 @@
 import { useRef } from "react";
 
-import Dialog from "@components/Dialog";
+import Dialog from "./Dialog";
 
 export default function Testimonial({ tesData, btnText }) {
   const dialogRef = useRef(null);
