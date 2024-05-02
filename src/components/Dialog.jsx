@@ -3,10 +3,6 @@ import { forwardRef } from "react";
 import { X } from "lucide-react";
 
 const Dialog = forwardRef(function Dialog({ children }, ref) {
-  const openModal = () => {
-    ref.current.showModal();
-  };
-
   const closeModal = () => {
     ref.current.close();
   };

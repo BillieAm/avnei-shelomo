@@ -21,7 +21,7 @@ export const ui = {
     "hero.subtitle1": "בית מדרש ללימוד הלכה ופנימיות התורה",
     "hero.subtitle2": "שע״י עמותת ״חסדי גבריאל״",
     "gallery.album1": "ההתחלה",
-    "gallery.album2": "אלבום 2",
+    "gallery.album2": "בקרוב...",
     "donation.title": "בואו לקחת חלק",
     "donation.body": "הצטרפו למעגל החשוב של תומכינו באמצעות תרומה בטופס מאובטח",
     "donation.btn": "לתרומה",
@@ -65,7 +65,7 @@ export const ui = {
       "Beth Midrash for studying Halacha and the inner aspects of the Torah",
     "hero.subtitle2": "Chasadai Gavriel foundation",
     "gallery.album1": "The Beginning",
-    "gallery.album2": "Album 2",
+    "gallery.album2": "Coming Soon...",
     "donation.title": "Take Part",
     "donation.body":
       "Join our essential circle of supporters by making a secure donation",

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 
 import Tabs from "@components/Tabs";
+import GalleryImage from "./GalleryImage";
 
 export default function GalleryContainer({ translatedTabs }) {
   const albums = translatedTabs;
@@ -14,11 +15,8 @@ export default function GalleryContainer({ translatedTabs }) {
         images = import.meta.glob("/src/assets/gallery/the-beginning/*.webp");
         break;
       case albums[1]:
-        images = import.meta.glob("/src/assets/gallery/test/*.jpg");
+        images = import.meta.glob("/src/assets/gallery/test/*.webp");
         break;
-
-      default:
-        images = import.meta.glob("/src/assets/gallery/the-beginning/*.jpg");
     }
 
     return Object.values(images).map((image) => image.name);
@@ -30,10 +28,6 @@ export default function GalleryContainer({ translatedTabs }) {
     setAlbumImages(images);
   }, [selectedAlbum]);
 
-  function handleClick(album) {
-    setSelectedAlbum(album);
-  }
-
   return (
     <div className="content-wrapper m-8 flex flex-col items-center gap-8 rounded-xl bg-primary-300">
       <Tabs
@@ -41,11 +35,9 @@ export default function GalleryContainer({ translatedTabs }) {
         activeTab={selectedAlbum}
         setActiveTab={setSelectedAlbum}
       />
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-2 gap-6 lg:grid-cols-3">
         {albumImages.map((image, index) => (
-          <div className=" bg-white p-2 pb-6 transition-all hover:scale-105 hover:shadow-xl">
-            <img key={index} src={image} alt={index} />
-          </div>
+          <GalleryImage image={image} index={index} />
         ))}
       </div>
     </div>
