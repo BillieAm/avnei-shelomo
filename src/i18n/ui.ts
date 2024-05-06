@@ -22,6 +22,8 @@ export const ui = {
     "hero.subtitle2": "שע״י עמותת ״חסדי גבריאל״",
     "gallery.album1": "ההתחלה",
     "gallery.album2": "בקרוב...",
+    "lessons.video": "וידאו",
+    "lessons.audio": "אודיו",
     "donation.title": "בואו לקחת חלק",
     "donation.body": "הצטרפו למעגל החשוב של תומכינו באמצעות תרומה בטופס מאובטח",
     "donation.btn": "לתרומה",
@@ -66,6 +68,8 @@ export const ui = {
     "hero.subtitle2": "Chasadai Gavriel foundation",
     "gallery.album1": "The Beginning",
     "gallery.album2": "Coming Soon...",
+    "lessons.video": "Video",
+    "lessons.audio": "Audio",
     "donation.title": "Take Part",
     "donation.body":
       "Join our essential circle of supporters by making a secure donation",
