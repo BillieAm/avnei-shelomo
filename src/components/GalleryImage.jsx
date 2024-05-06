@@ -6,7 +6,7 @@ export default function GalleryImage({ image, index }) {
   const imageRef = useRef(null);
 
   return (
-    <div key={index}>
+    <div>
       <div
         onClick={() => imageRef.current.showModal()}
         className="cursor-pointer bg-white p-2 pb-6 transition-all hover:scale-105 hover:shadow-xl"

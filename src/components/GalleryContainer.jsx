@@ -3,28 +3,13 @@ import { useState, useEffect } from "react";
 import Tabs from "./Tabs";
 import GalleryImage from "./GalleryImage";
 
-export default function GalleryContainer({ translatedTabs }) {
+export default function GalleryContainer({ translatedTabs, imagesByAlbums }) {
   const albums = translatedTabs;
   const [selectedAlbum, setSelectedAlbum] = useState(albums[0]);
-  const [albumImages, setAlbumImages] = useState([]);
+  const [albumImages, setAlbumImages] = useState(imagesByAlbums[0]);
 
-  function importImages(album) {
-    let images;
-    switch (album) {
-      case albums[0]:
-        images = import.meta.glob("/src/assets/gallery/the-beginning/*.webp");
-        break;
-      case albums[1]:
-        images = import.meta.glob("/src/assets/gallery/test/*.webp");
-        break;
-    }
-
-    return Object.values(images).map((image) => image.name);
-  }
-
-  // Fetch the images for the selected album
   useEffect(() => {
-    const images = importImages(selectedAlbum);
+    const images = imagesByAlbums[albums.indexOf(selectedAlbum)];
     setAlbumImages(images);
   }, [selectedAlbum]);
 
@@ -36,8 +21,12 @@ export default function GalleryContainer({ translatedTabs }) {
         setActiveTab={setSelectedAlbum}
       />
       <div className="grid grid-cols-2 gap-6 lg:grid-cols-3">
-        {albumImages.map((image, index) => (
-          <GalleryImage image={image} index={index} />
+        {albumImages.map((imageObj, index) => (
+          <GalleryImage
+            key={index}
+            image={imageObj.default.src}
+            index={index}
+          />
         ))}
       </div>
     </div>

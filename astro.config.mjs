@@ -13,11 +13,6 @@ export default defineConfig({
       prefixDefaultLocale: false,
     },
   },
-  vite: {
-    build: {
-      base: "/",
-    },
-  },
   integrations: [
     tailwind(),
     icon({
