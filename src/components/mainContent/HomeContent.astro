@@ -64,6 +64,17 @@ const testimonialsList = {
 };
 ---
 
+<!-- Main video -->
+<div class="flex justify-center pt-16">
+  <iframe
+    width="560"
+    height="315"
+    src="https://gavriel.kvod.co.il/player/2omskim9"
+    title="WizzoStream video player"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen></iframe>
+</div>
+
 <!-- Refael -->
 <section
   class="content-wrapper mx-auto flex max-w-5xl flex-col gap-10 lg:flex-row"
@@ -77,12 +88,12 @@ const testimonialsList = {
       <Content />
     </div>
     <div class="flex flex-col gap-6 sm:flex-row">
-      <VideoModal
+      <!-- <VideoModal
         client:load
         contentSrc="https://gavriel.kvod.co.il/player/2omskim9"
         btnText={t("video.btn")}
         btnClass="btn w-full bg-primary text-primary-foreground"
-      />
+      /> -->
       <Link
         href={translatePath("/about/")}
         text={t("readMore.btn")}
