@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://avneishelomo.com/sitemap-index.xml
