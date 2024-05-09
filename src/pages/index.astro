@@ -10,6 +10,15 @@ import DonationCTA from "../components/DonationCTA.astro";
   title="אבני שלמה - בית מדרש"
   description="בית מדרש ללימוד הלכה ופנימיות התורה"
 >
+  <script type="application/ld+json" slot="structured-data">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "מיקוד - ניהול אנשים מכוון מטרה",
+      "alternateName": "מיקוד - ניהול משאבי אנוש במיקור חוץ",
+      "url": "https://mikud.net/"
+    }
+  </script>
   <Hero />
   <HomeContent />
   <DonationCTA />

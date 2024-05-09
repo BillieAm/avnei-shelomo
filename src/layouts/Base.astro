@@ -29,7 +29,7 @@ const { title, description, bgColor } = Astro.props;
     <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-
+    <slot name="structured-data" />
     <ViewTransitions />
   </head>
   <body class=`min-h-screen ${bgColor} text-foreground`>
