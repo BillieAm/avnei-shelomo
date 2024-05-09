@@ -29,6 +29,14 @@ const { title, description, bgColor } = Astro.props;
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <meta name="generator" content={Astro.generator} />
+    <meta property="og:title" content="אבני שלמה" />
+    <meta property="og:type" content="WebSite" />
+    <meta
+      property="og:image"
+      content="https://i.ibb.co/z7SnzC3/avnei-shelomo-logo-he-title.png"
+    />
+    <meta property="og:url" content="https://www.avneishelomo.com/" />
+    <meta property="og:description" content="בית מדרש להלכה ופנימיות התורה" />
     <title>{title}</title>
     <slot name="structured-data" />
     <ViewTransitions />
