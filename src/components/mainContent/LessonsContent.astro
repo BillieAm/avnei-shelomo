@@ -12,6 +12,25 @@ const { title, subtitle } = Astro.props;
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+
+const audioFiles = [
+  {
+    name: "שיעור קצר על פנימיות קרבן הפסח - יש לנו קצת קרבן גם היום",
+    url: "https://drive.google.com/file/d/1AoLppHBtTyNxJ5OFK7CBoW2sM7ze7RRn/preview?usp=sharing",
+  },
+  {
+    name: "שיעור קצר פסח ושביעי של פסח",
+    url: "https://drive.google.com/file/d/1Gq4LXI1nISGS_JdXJIzXFkbUVxt4_GtF/preview?usp=sharing",
+  },
+  {
+    name: 'שיעור קצר -טבת תשפ"ג',
+    url: "https://drive.google.com/file/d/18XMqRyFtcqeSn2xFLPrBKDaR4NTtsii0/preview?usp=sharing",
+  },
+  {
+    name: 'שיעור קצר -כסלו תשפ"ג',
+    url: "https://drive.google.com/file/d/1F2uR8yYKZCYgQDrIsER3xk8h-Av-C-yx/preview",
+  },
+];
 ---
 
 <section class="main-section-wrapper">
@@ -24,5 +43,6 @@ const t = useTranslations(lang);
   <LessonsContainer
     client:load
     translatedTabs={[t("lessons.video"), t("lessons.audio")]}
+    audioFiles={audioFiles}
   />
 </section>

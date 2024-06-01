@@ -2,7 +2,7 @@ import { useRef, useEffect } from "react";
 
 import { X } from "lucide-react";
 
-export default function VideoModal({ contentSrc, btnText, btnClass }) {
+export default function MediaModal({ children, contentSrc }) {
   const dialogRef = useRef(null);
   const videoRef = useRef(null);
 
@@ -37,9 +37,7 @@ export default function VideoModal({ contentSrc, btnText, btnClass }) {
 
   return (
     <div>
-      <button onClick={openModal} className={btnClass}>
-        {btnText}
-      </button>
+      <div onClick={openModal}>{children}</div>
       <dialog
         ref={dialogRef}
         onClick={handleClickOutside}
