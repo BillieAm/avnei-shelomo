@@ -13,6 +13,10 @@ const { title, subtitle } = Astro.props;
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
+const videoFiles = [
+  { name: "סרטון תדמית", url: "https://gavriel.kvod.co.il/player/2omskim9" },
+];
+
 const audioFiles = [
   {
     name: "שיעור קצר על פנימיות קרבן הפסח - יש לנו קצת קרבן גם היום",
@@ -43,6 +47,6 @@ const audioFiles = [
   <LessonsContainer
     client:load
     translatedTabs={[t("lessons.video"), t("lessons.audio")]}
-    audioFiles={audioFiles}
+    tabsContent={[videoFiles, audioFiles]}
   />
 </section>
