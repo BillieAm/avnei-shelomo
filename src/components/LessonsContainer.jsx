@@ -26,3 +26,5 @@ export default function LessonsContainer({ translatedTabs, tabsContent }) {
     </div>
   );
 }
+
+/**/
