@@ -1,6 +1,7 @@
 ---
 import { getLangFromUrl, useTranslations } from "../../i18n/utils";
-
+import audioFiles from "../../data/audioLessons";
+import videoFiles from "../../data/videoLessons";
 import LessonsContainer from "../LessonsContainer";
 
 interface Props {
@@ -12,77 +13,6 @@ const { title, subtitle } = Astro.props;
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-
-const videoFiles = [
-  { name: "סרטון תדמית", url: "https://gavriel.kvod.co.il/player/2omskim9" },
-];
-
-const audioFiles = [
-  {
-    name: "chag ha'shavuot -matan Tora -matan tsura",
-    url: "https://drive.google.com/file/d/1V1roE0ZaPPj9q40Lp9q1HeCumksRhWq8/preview",
-  },
-  {
-    name: "Korban pesach -our neshama-Refael cohen",
-    url: "https://drive.google.com/file/d/1jaYRbEeqaMBEoUTKNL5RfR40l1Fed38v/preview",
-  },
-  {
-    name: "The dept of Yishmael hating Am Ysrael the sons of Yitsaak",
-    url: "https://drive.google.com/file/d/1vAE_qv5XHXt2o0bPka0ADm2nQAqO26MZ/preview",
-  },
-  {
-    name: "The dept of Yishmael hating Yisrael",
-    url: "https://drive.google.com/file/d/12lhOU2EUuVuBvJQfOQGiyeI7QJCsg_Ue/preview",
-  },
-  {
-    name: 'Dayenu-a chidush from the "Abir Yaakov"-Refael cohen.',
-    url: "https://drive.google.com/file/d/1qLHc84gflCIsvfc-Q145dDzqN8bX0tIO/preview",
-  },
-  {
-    name: "שיעור קצר על פנימיות קרבן הפסח - יש לנו קצת קרבן גם היום",
-    url: "https://drive.google.com/file/d/1AoLppHBtTyNxJ5OFK7CBoW2sM7ze7RRn/preview?usp=sharing",
-  },
-  {
-    name: "שיעור קצר פסח ושביעי של פסח",
-    url: "https://drive.google.com/file/d/1Gq4LXI1nISGS_JdXJIzXFkbUVxt4_GtF/preview?usp=sharing",
-  },
-  {
-    name: 'שיעור קצר -טבת תשפ"ג',
-    url: "https://drive.google.com/file/d/18XMqRyFtcqeSn2xFLPrBKDaR4NTtsii0/preview?usp=sharing",
-  },
-  {
-    name: 'שיעור קצר -כסלו תשפ"ג',
-    url: "https://drive.google.com/file/d/1F2uR8yYKZCYgQDrIsER3xk8h-Av-C-yx/preview",
-  },
-  {
-    name: "כוונות פורים-תשעג",
-    url: "https://drive.google.com/file/d/1hY_oHRA5Sfp1dv8Z2_AfF4ygdIUqtVFr/preview",
-  },
-  {
-    name: "טו בשבט",
-    url: "https://drive.google.com/file/d/1yJTi96-18139LOU0bJmNbwBX3wC4_ONy/preview",
-  },
-  {
-    name: "כונות חנוכה",
-    url: "https://drive.google.com/file/d/16PFZnJzt4PgT6XjstAR4KzsHeZAdFkUu/preview",
-  },
-  {
-    name: "ראש השנה תשעג",
-    url: "https://drive.google.com/file/d/1kBH7ZnrDd18z-rMBAqK2qwgPiH5tsI6v/preview",
-  },
-  {
-    name: "שיעור שבת הגדול -אלי כץ-לונדון",
-    url: "https://drive.google.com/file/d/1fpnBhYMXcU29B07Bff__e9XCkiDBKndi/preview",
-  },
-  {
-    name: "ג׳ סיבות לצמצום",
-    url: "https://drive.google.com/file/d/13IX1TOl_TA8hiZHKQTIdTo6fKF8dgseN/preview",
-  },
-  {
-    name: "תן טל ומטר -לונדון תש_פ",
-    url: "https://drive.google.com/file/d/1FILYD-_dTRGwTPqv0gxEhL4e8ylL3orH/preview",
-  },
-];
 ---
 
 <section class="main-section-wrapper">
