@@ -71,7 +71,12 @@ const audioFiles = [
     name: "10-10-13 Shiur 18 Sefer Habiurim Drush Igulim Veyosher Anaf Beis Paragraphs 1,2,3,4,5,6",
     url: "https://drive.google.com/file/d/1vBdyEYCb2V8SKcvKLhoINs7bX8xxr7IZ/preview",
   },
-  {
+];
+
+export default audioFiles;
+
+/* 
+{
     name: "10-09-01 Shiur 17 Sefer Habiurim Drush Igulim Veyosher Anaf Beis- Eitz Chayim",
     url: "https://drive.google.com/file/d/1nixbe5twDwDSKP8Eiru2Bm_83fnoVMo6/preview",
   },
@@ -327,6 +332,4 @@ const audioFiles = [
     name: "תן טל ומטר -לונדון תש_פ",
     url: "https://drive.google.com/file/d/1FILYD-_dTRGwTPqv0gxEhL4e8ylL3orH/preview",
   },
-];
-
-export default audioFiles;
+*/
