@@ -5,6 +5,7 @@ import {
   useTranslatedPath,
 } from "../i18n/utils";
 
+import NavDesktop from "./NavDesktop";
 import NavMobile from "./NavMobile";
 import LanguagePicker from "./LanguagePicker.astro";
 import Link from "./Link.astro";
@@ -57,42 +58,9 @@ const translatedRouts = [
     </div>
 
     <!-- Desktop Nav -->
-    <nav class="hidden lg:block">
-      <ul class="flex">
-        {
-          translatedRouts.map((route) => {
-            if (!route.children) {
-              return (
-                <li class="px-8">
-                  <a href={route.path} class="hover:text-accent">
-                    {route.name}
-                  </a>
-                </li>
-              );
-            }
-            if (route.children) {
-              return (
-                <li class="group relative px-8">
-                  <a href={route.path} class="group hover:text-accent">
-                    {route.name}
-                  </a>
-
-                  <ul class="absolute inset-x-0 top-full flex-col bg-white text-center text-nav group-hover:flex">
-                    {route.children.map((route) => (
-                      <li>
-                        <a href={route.path} class="hover:text-primary">
-                          {route.name}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </li>
-              );
-            }
-          })
-        }
-      </ul>
-    </nav>
+    <div class="hidden lg:block">
+      <NavDesktop routesList={translatedRouts} client:load />
+    </div>
 
     <div class="flex items-center gap-12">
       <!-- Language and contacts buttons -->
