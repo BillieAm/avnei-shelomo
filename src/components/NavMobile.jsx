@@ -2,6 +2,11 @@ import { useState } from "react";
 
 export default function NavMobile({ routesList, transContact }) {
   const [isNavMobileOpen, setIsNavMobileOpen] = useState(false);
+  const [openDropdown, setOpenDropdown] = useState(null);
+
+  const toggleDropdown = (index) => {
+    setOpenDropdown(openDropdown === index ? null : index);
+  };
 
   return (
     <div>
@@ -24,15 +29,35 @@ export default function NavMobile({ routesList, transContact }) {
           className="absolute inset-x-0 top-0 z-10 border-b-4 border-b-primary bg-nav pb-8 pt-28"
         >
           <ul className="flex flex-col items-center gap-6 text-center">
-            {routesList.map((route) => (
+            {routesList.map((route, index) => (
               <li className="w-full">
-                <a
-                  href={route.path}
-                  onClick={() => setIsNavMobileOpen(!isNavMobileOpen)}
-                  className="block w-full uppercase outline-offset-4 outline-accent"
-                >
-                  {route.name}
-                </a>
+                {route.children ? (
+                  <>
+                    <button
+                      onClick={() => toggleDropdown(index)}
+                      aria-expanded={openDropdown}
+                    >
+                      {route.name}
+                    </button>
+                    {openDropdown === index && (
+                      <ul className="">
+                        {route.children.map((route) => (
+                          <li className="py-2 text-accent">
+                            <a href={route.path}>{route.name}</a>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </>
+                ) : (
+                  <a
+                    href={route.path}
+                    onClick={() => setIsNavMobileOpen(!isNavMobileOpen)}
+                    className="block w-full uppercase outline-offset-4 outline-accent"
+                  >
+                    {route.name}
+                  </a>
+                )}
               </li>
             ))}
             <li>

@@ -28,7 +28,11 @@ export default function NavDesktop({ routesList }) {
           <li key={index} className="relative hover:text-accent">
             {route.children ? (
               <div ref={dropdownRef}>
-                <button onClick={() => toggleDropdown(index)} className="px-8">
+                <button
+                  onClick={() => toggleDropdown(index)}
+                  aria-expanded={openDropdown}
+                  className="px-8"
+                >
                   {route.name}
                 </button>
                 {openDropdown === index && (
