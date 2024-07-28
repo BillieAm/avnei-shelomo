@@ -29,6 +29,7 @@ export default function NavDesktop({ routesList }) {
             {route.children ? (
               <div ref={dropdownRef}>
                 <button
+                  key={index}
                   onClick={() => toggleDropdown(index)}
                   aria-expanded={openDropdown}
                   className="px-8"
@@ -37,8 +38,11 @@ export default function NavDesktop({ routesList }) {
                 </button>
                 {openDropdown === index && (
                   <ul className="absolute inset-x-0 top-full flex flex-col bg-white text-center text-nav">
-                    {route.children.map((route) => (
-                      <li className="border border-accent hover:bg-primary hover:text-white">
+                    {route.children.map((route, index) => (
+                      <li
+                        key={index}
+                        className="border border-accent hover:bg-primary hover:text-white"
+                      >
                         <a href={route.path} className="block">
                           {route.name}
                         </a>

@@ -1,0 +1,43 @@
+---
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+import audioData from "../../data/audioLessons.json";
+
+const catImages = await Astro.glob("/src/assets/lessons-categories/*");
+
+interface Props {
+  title: string;
+  subtitle?: string;
+}
+
+const { title, subtitle } = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const firstLevelFolder = audioData.children;
+---
+
+<section class="main-section-wrapper">
+  <div class="heading-wrapper">
+    <h1>{title}</h1>
+    <p>
+      {subtitle}
+    </p>
+  </div>
+
+  <div class="mx-auto grid max-w-6xl grid-cols-3 gap-8">
+    {
+      firstLevelFolder.map((folder, index) => (
+        <div class="">
+          <img
+            alt="category image"
+            src={catImages[index].default.src}
+            class="aspect-[2/1] w-full object-cover"
+          />
+          <h2>{folder.name}</h2>
+          <p>{folder.description}</p>
+        </div>
+      ))
+    }
+  </div>
+</section>

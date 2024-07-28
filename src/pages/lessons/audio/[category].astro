@@ -1,0 +1,27 @@
+---
+import Base from "../../../layouts/Base.astro";
+import DonationCTA from "../../../components/DonationCTA.astro";
+import folderStructure from "../../../data/audioLessons.json";
+
+export function getStaticPaths() {
+  return folderStructure.children.map((folder) => ({
+    params: { category: folder.slug },
+    props: { folderData: folder },
+  }));
+}
+
+const { folderData } = Astro.props;
+---
+
+<Base
+  bgColor="bg-teal-100"
+  title={folderData.name}
+  description="שיעורי אודיו מפי הרב רפאל כהן, ראש המוסדות והכולל"
+>
+  <section class="main-section-wrapper">
+    <div class="heading-wrapper">
+      <h1>{folderData.name}</h1>
+    </div>
+  </section>
+  <DonationCTA />
+</Base>
