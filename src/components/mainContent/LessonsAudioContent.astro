@@ -1,5 +1,9 @@
 ---
-import { getLangFromUrl, useTranslations } from "../../i18n/utils";
+import {
+  getLangFromUrl,
+  useTranslations,
+  useTranslatedPath,
+} from "../../i18n/utils";
 import audioData from "../../data/audioLessons.json";
 
 const catImages = await Astro.glob("/src/assets/lessons-categories/*");
@@ -13,6 +17,7 @@ const { title, subtitle } = Astro.props;
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
 
 const firstLevelFolder = audioData.children;
 ---
@@ -28,7 +33,7 @@ const firstLevelFolder = audioData.children;
   <div class="mx-auto grid max-w-6xl grid-cols-3 gap-8">
     {
       firstLevelFolder.map((folder, index) => (
-        <div class="">
+        <a href={`${translatePath("/lessons/audio/")}${folder.slug}`}>
           <img
             alt="category image"
             src={catImages[index].default.src}
@@ -36,7 +41,7 @@ const firstLevelFolder = audioData.children;
           />
           <h2>{folder.name}</h2>
           <p>{folder.description}</p>
-        </div>
+        </a>
       ))
     }
   </div>
