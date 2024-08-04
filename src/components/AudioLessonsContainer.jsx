@@ -18,15 +18,27 @@ export default function AudioLessonsContainer({ categoryData }) {
   }, [selectedTab]);
 
   return (
-    <div>
+    <div className="bg-red-300 p-16">
       {isFolder ? (
-        <div>
+        <div className="flex flex-col items-center gap-8">
           <Tabs
             tabs={tabsList}
             activeTab={selectedTab}
             setActiveTab={setSelectedTab}
           />
-          {currentFolderLessons.map((lesson) => (
+          <div className="grid auto-rows-[minmax(0,_2fr)] grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {currentFolderLessons.map((lesson) => (
+              <AudioLesson
+                key={lesson.id}
+                url={`https://drive.google.com/file/d/${lesson.id}/preview`}
+                title={lesson.name}
+              />
+            ))}
+          </div>
+        </div>
+      ) : (
+        <div className="grid auto-rows-fr grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {categoryData.children.map((lesson) => (
             <AudioLesson
               key={lesson.id}
               url={`https://drive.google.com/file/d/${lesson.id}/preview`}
@@ -34,14 +46,6 @@ export default function AudioLessonsContainer({ categoryData }) {
             />
           ))}
         </div>
-      ) : (
-        categoryData.children.map((lesson) => (
-          <AudioLesson
-            key={lesson.id}
-            url={`https://drive.google.com/file/d/${lesson.id}/preview`}
-            title={lesson.name}
-          />
-        ))
       )}
     </div>
   );

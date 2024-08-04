@@ -30,17 +30,26 @@ const firstLevelFolder = audioData.children;
     </p>
   </div>
 
-  <div class="mx-auto grid max-w-6xl grid-cols-3 gap-8">
+  <div
+    class="content-wrapper mx-auto grid max-w-6xl grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-2 lg:grid-cols-3"
+  >
     {
       firstLevelFolder.map((folder, index) => (
-        <a href={`${translatePath("/lessons/audio/")}${folder.slug}`}>
+        <a
+          href={`${translatePath("/lessons/audio/")}${folder.slug}`}
+          class="overflow-hidden rounded-2xl bg-white transition-all hover:shadow-lg"
+        >
           <img
             alt="category image"
             src={catImages[index].default.src}
-            class="aspect-[2/1] w-full object-cover"
+            class="aspect-[2/1] w-full object-cover transition-all duration-500 ease-linear hover:scale-110"
           />
-          <h2>{folder.name}</h2>
-          <p>{folder.description}</p>
+          <div class="p-4">
+            <h2 class="mb-4 text-center text-lg font-bold text-primary-200">
+              {folder.name}
+            </h2>
+            <p class="text-foreground-200">{folder.description}</p>
+          </div>
         </a>
       ))
     }

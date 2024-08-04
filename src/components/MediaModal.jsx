@@ -36,7 +36,7 @@ export default function MediaModal({ children, contentSrc }) {
   }, []);
 
   return (
-    <div>
+    <div className="rounded-md bg-background p-4">
       <div onClick={openModal}>{children}</div>
       <dialog
         ref={dialogRef}

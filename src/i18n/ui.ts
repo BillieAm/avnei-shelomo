@@ -26,7 +26,6 @@ export const ui = {
     "gallery.album2": "ההתחלה",
     "lessons.video": "וידאו",
     "lessons.audio": "אודיו",
-    "lessons.catBtn": "לשיעורים",
     "donation.title": "בואו לקחת חלק",
     "donation.body": "הצטרפו למעגל החשוב של תומכינו באמצעות תרומה בטופס מאובטח",
     "donation.btn": "לתרומה",
@@ -75,7 +74,6 @@ export const ui = {
     "gallery.album2": "The Beginning",
     "lessons.video": "Video",
     "lessons.audio": "Audio",
-    "lessons.catBtn": "All Lessons",
     "donation.title": "Take Part",
     "donation.body":
       "Join our essential circle of supporters by making a secure donation",
