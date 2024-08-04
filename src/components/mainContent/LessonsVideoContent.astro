@@ -1,8 +1,7 @@
 ---
 import { getLangFromUrl, useTranslations } from "../../i18n/utils";
-import audioFiles from "../../data/audioLessons";
-import videoFiles from "../../data/videoLessons";
-import LessonsContainer from "../LessonsContainer";
+import { Image } from "astro:assets";
+import soon from "../../assets/misc/coming-soon.webp";
 
 interface Props {
   title: string;
@@ -22,9 +21,9 @@ const t = useTranslations(lang);
       {subtitle}
     </p>
   </div>
-  <LessonsContainer
-    client:load
-    translatedTabs={[t("lessons.audio"), t("lessons.video")]}
-    tabsContent={[audioFiles, videoFiles]}
-  />
+  <div
+    class="content-wrapper m-8 flex items-center justify-center bg-orange-300"
+  >
+    <Image src={soon} alt="coming soon" width={400} />
+  </div>
 </section>
