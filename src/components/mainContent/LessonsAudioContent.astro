@@ -6,6 +6,9 @@ import {
 } from "../../i18n/utils";
 import audioData from "../../data/audioLessons.json";
 
+import { Image } from "astro:assets";
+import refaelImage from "../../assets/gallery/kollel-vibes/KV2A6208.webp";
+
 const catImages = await Astro.glob("/src/assets/lessons-categories/*");
 
 interface Props {
@@ -25,9 +28,16 @@ const firstLevelFolder = audioData.children;
 <section class="main-section-wrapper">
   <div class="heading-wrapper">
     <h1>{title}</h1>
-    <p>
-      {subtitle}
-    </p>
+    <div class="mt-8 flex max-w-5xl flex-col items-center gap-8 lg:flex-row">
+      <p class="text-lg tracking-widest text-foreground-200 md:text-xl">
+        {subtitle}
+      </p>
+      <Image
+        src={refaelImage}
+        alt="רפאל כהן"
+        class="aspect-square rounded-3xl object-cover lg:min-w-80"
+      />
+    </div>
   </div>
 
   <div

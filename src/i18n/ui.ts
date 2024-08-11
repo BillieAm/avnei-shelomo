@@ -13,7 +13,7 @@ export const ui = {
     "nav.home": "בית",
     "nav.about": "אודות",
     "nav.lessons": "שיעורים",
-    "nav.lessons.audio": "אודיו",
+    "nav.lessons.audio": "שמע",
     "nav.lessons.video": "וידאו",
     "nav.gallery": "גלריה",
     "nav.donate": "תרומות",
