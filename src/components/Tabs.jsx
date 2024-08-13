@@ -1,6 +1,6 @@
 export default function Tabs({ tabs, activeTab, setActiveTab }) {
   return (
-    <div className="flex gap-2 rounded-xl bg-primary p-1 font-bold text-primary-foreground">
+    <div className="flex flex-wrap gap-2 rounded-xl bg-primary p-1 font-bold text-primary-foreground">
       {tabs.map((tab, index) => (
         <button
           key={index}
