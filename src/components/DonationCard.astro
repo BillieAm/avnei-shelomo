@@ -4,15 +4,16 @@ import { Icon } from "astro-icon/components";
 interface Props {
   icon: string;
   title: string;
+  currencyColor: "bg-blue-200" | "bg-orange-200" | "bg-purple-200";
 }
 
-const { icon, title } = Astro.props;
+const { icon, title, currencyColor } = Astro.props;
 ---
 
 <article
   class="row-span-4 grid grid-rows-subgrid rounded-xl border border-black bg-white p-6 text-center"
 >
-  <div class="flex justify-center">
+  <div class=`flex justify-center ${currencyColor}`>
     <Icon name={icon} aria-hidden size={32} />
   </div>
   <div class="text-xl font-bold">

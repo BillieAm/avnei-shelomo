@@ -33,6 +33,7 @@ export default defineConfig({
           "moon-fill",
           "sun-fill",
         ],
+        mdi: ["currency-ils", "currency-gbp", "currency-usd"],
       },
     }),
     react(),

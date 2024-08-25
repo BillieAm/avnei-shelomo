@@ -1,8 +1,11 @@
 ---
 import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 
+import { Image } from "astro:assets";
+
 import Link from "../Link.astro";
 import DonationCard from "../DonationCard.astro";
+import zelleQr from "../../assets/misc/zelle-qr.jpeg";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -27,48 +30,104 @@ const { title, subtitle } = Astro.props;
   <div
     class="content-wrapper mx-auto grid max-w-4xl grid-cols-1 gap-x-10 gap-y-6 sm:grid-cols-3"
   >
-    <!-- Credit card  -->
-    <DonationCard icon="ph:credit-card" title={t("payment.credit.title")}>
+    <!-- ILS - Credit card  -->
+    <DonationCard
+      icon="mdi:currency-ils"
+      title={t("payment.credit.title")}
+      currencyColor="bg-blue-200"
+    >
       <div class="text-foreground-200">
         <p>{t("payment.credit.body")}</p>
       </div>
       <Link
         href="https://www.matara.pro/nedarimplus/online/?mosad=7004358"
         text={t("payment.credit.btn")}
-        class="block w-full self-end bg-primary text-primary-foreground"
+        class="block w-full self-end bg-primary-200 text-primary-foreground"
         target={"_blank"}
       />
     </DonationCard>
 
-    <!-- Abroad -->
-    <DonationCard icon="ph:globe" title={t("paymnet.abroad.title")}>
+    <!-- ILS - Bank transfer -->
+    <DonationCard
+      icon="mdi:currency-ils"
+      title={t("payment.bank.title")}
+      currencyColor="bg-blue-200"
+    >
       <div class="text-foreground-200">
-        <p>{t("payment.abroad.body1")}</p>
-        <p>{t("payment.abroad.body2")}</p>
-      </div>
-      <div class="flex flex-col gap-4">
-        <Link
-          href="https://app.atc.fund/?s=donateNow&id=4Y3Y8J"
-          text={t("payment.abroad.btn.us")}
-          class="block w-full bg-accent text-accent-foreground"
-          target={"_blank"}
-        />
-        <Link
-          href="http://donate.achisomoch.org/6581"
-          text={t("payment.abroad.btn.uk")}
-          class="block w-full bg-accent text-accent-foreground"
-          target={"_blank"}
-        />
-      </div>
-    </DonationCard>
-
-    <!-- Bank transfer -->
-    <DonationCard icon="ph:bank" title={t("payment.bank.title")}>
-      <div class="text-foreground-200">
+        <p>{t("payment.bank.name")}</p>
         <p>{t("payment.bank.bank")}</p>
         <p>{t("payment.bank.branch")}</p>
         <p>{t("payment.bank.account")}</p>
       </div>
+      <div class="text-primary-200">
+        <p>{t("payment.bank.zahav")}</p>
+        <p><b>IBAN: IL840521880000000708734</b></p>
+      </div>
+    </DonationCard>
+
+    <!-- USD - Credit Card -->
+    <DonationCard
+      icon="mdi:currency-usd"
+      title={t("payment.dollar.card.title")}
+      currencyColor="bg-orange-200"
+    >
+      <div class="text-foreground-200">
+        <p>{t("payment.dollar.card.body1")}</p>
+        <p>{t("payment.dollar.card.body2")}</p>
+      </div>
+      <Link
+        href="https://app.atc.fund/?s=donateNow&id=4Y3Y8J"
+        text={t("payment.dollar.card.btn")}
+        class="block w-full self-end bg-primary-200 text-primary-foreground"
+        target={"_blank"}
+      />
+    </DonationCard>
+
+    <!-- USD - Wire transfer -->
+    <DonationCard
+      icon="mdi:currency-usd"
+      title={t("payment.dollar.bank.title")}
+      currencyColor="bg-orange-200"
+    >
+      <div class="text-foreground-200">
+        <p>CHASDAI GAVRIEL</p>
+        <p>AVNEI SHELOMO</p>
+        <p>Account 606923319</p>
+        <p>CHASE BANK</p>
+        <p>Kings Highway and E17 BROOKLYN, N.Y.</p>
+      </div>
+    </DonationCard>
+
+    <!-- USD - Zelle -->
+    <DonationCard
+      icon="mdi:currency-usd"
+      title={t("payment.zelle.title")}
+      currencyColor="bg-orange-200"
+    >
+      <div class="text-foreground-200">
+        <p>{t("payment.zelle.body1")} Zelle</p>
+        <p>{t("payment.zelle.body2")}</p>
+        <p class="text-primary-200"><b>refcohenil@gmail.com</b></p>
+        <p>{t("payment.zelle.body3")}</p>
+      </div>
+      <Image src={zelleQr} alt="Zelle qr code" width={100} class="mx-auto" />
+    </DonationCard>
+
+    <!-- GBP - AAC -->
+    <DonationCard
+      icon="mdi:currency-gbp"
+      title={t("payment.gbp.title")}
+      currencyColor="bg-purple-200"
+    >
+      <div class="text-foreground-200">
+        <p>{t("payment.gbp.body")}</p>
+      </div>
+      <Link
+        href="http://donate.achisomoch.org/6581"
+        text={t("payment.gbp.btn")}
+        class="block w-full self-end bg-primary-200 text-primary-foreground"
+        target={"_blank"}
+      />
     </DonationCard>
   </div>
 </section>
