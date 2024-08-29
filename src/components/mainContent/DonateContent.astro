@@ -6,6 +6,7 @@ import { Image } from "astro:assets";
 import Link from "../Link.astro";
 import DonationCard from "../DonationCard.astro";
 import zelleQr from "../../assets/misc/zelle-qr.jpeg";
+import aacLogo from "../../assets/misc/aac_logo.jpeg";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -107,8 +108,11 @@ const { title, subtitle } = Astro.props;
       <div class="text-foreground-200">
         <p>{t("payment.zelle.body1")} Zelle</p>
         <p>{t("payment.zelle.body2")}</p>
-        <p class="text-primary-200"><b>refcohenil@gmail.com</b></p>
-        <p>{t("payment.zelle.body3")}</p>
+        <div class="my-4">
+          <p class="text-primary-200">CHASDAI GAVRIEL</p>
+          <p class="text-primary-200"><b>refcohenil@gmail.com</b></p>
+        </div>
+        <p>{t("payment.zelle.body3")}:</p>
       </div>
       <Image src={zelleQr} alt="Zelle qr code" width={100} class="mx-auto" />
     </DonationCard>
@@ -116,11 +120,12 @@ const { title, subtitle } = Astro.props;
     <!-- GBP - AAC -->
     <DonationCard
       icon="mdi:currency-gbp"
-      title="ACC"
+      title="AAC"
       currencyColor="bg-purple-200"
     >
       <div class="text-foreground-200">
         <p>{t("payment.gbp.body")}</p>
+        <Image src={aacLogo} alt="AAC Logo" width={100} class="mx-auto my-4" />
       </div>
       <Link
         href="http://donate.achisomoch.org/6581"
