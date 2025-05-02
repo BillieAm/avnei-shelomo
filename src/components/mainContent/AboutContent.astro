@@ -4,12 +4,12 @@ import { getLangFromUrl } from "../../i18n/utils";
 import { Image } from "astro:assets";
 import refaelImage from "../../assets/misc/refael2.jpg";
 
-import { getEntry } from "astro:content";
+import { getEntry, render } from "astro:content";
 
 const lang = getLangFromUrl(Astro.url);
 
-const entry = await getEntry(lang, "about");
-const { Content } = await entry.render();
+const infoData = await getEntry('aboutInfo', lang);
+const { Content } = await render(infoData);
 ---
 
 <section

@@ -17,14 +17,14 @@ import attia from "../../assets/testimonials/mordechai-attia.webp";
 import mittelman from "../../assets/testimonials/aharon-mittelman.webp";
 import friedman from "../../assets/testimonials/yoel-friedman.webp";
 
-import { getEntry } from "astro:content";
+import { getEntry, render } from "astro:content";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
 
-const entry = await getEntry(lang, "home");
-const { Content } = await entry.render();
+const infoData = await getEntry('homeInfo', lang);
+const {Content} = await render(infoData);
 
 const testimonialsList = {
   he: [
@@ -81,7 +81,7 @@ const testimonialsList = {
   </div>
   <div class="flex flex-col gap-6">
     <div>
-      <h3 class="mb-4 text-3xl font-bold text-primary">{entry.data.title}</h3>
+      <h3 class="mb-4 text-3xl font-bold text-primary">{infoData.data.title}</h3>
       <Content />
     </div>
     <div class="flex flex-col gap-6 sm:flex-row">

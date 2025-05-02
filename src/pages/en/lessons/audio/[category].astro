@@ -6,7 +6,7 @@ import folderStructure from "../../../../data/audioLessons.json";
 
 export function getStaticPaths() {
   return folderStructure.children.map((folder) => ({
-    params: { category: folder.slug },
+    params: { category: folder.id },
     props: { folderData: folder },
   }));
 }
