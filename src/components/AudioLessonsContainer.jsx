@@ -30,8 +30,8 @@ export default function AudioLessonsContainer({ categoryData }) {
             {currentFolderLessons.map((lesson) => (
               <AudioLesson
                 key={lesson.id}
-                url={`https://drive.google.com/file/d/${lesson.id}/preview`}
-                title={lesson.name}
+                url={lesson.url}
+                title={lesson.title}
               />
             ))}
           </div>
@@ -41,8 +41,8 @@ export default function AudioLessonsContainer({ categoryData }) {
           {categoryData.children.map((lesson) => (
             <AudioLesson
               key={lesson.id}
-              url={`https://drive.google.com/file/d/${lesson.id}/preview`}
-              title={lesson.name}
+              url={lesson.url}
+              title={lesson.title}
             />
           ))}
         </div>

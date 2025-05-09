@@ -4,12 +4,12 @@ import {
   useTranslations,
   useTranslatedPath,
 } from "../../i18n/utils";
-import audioData from "../../data/audioLessons.json";
+import audioData from "../../data/cloudinary-assets.json";
 
 import { Image } from "astro:assets";
 import refaelImage from "../../assets/gallery/kollel-vibes/KV2A6208.webp";
 
-const catImages = await Astro.glob("/src/assets/lessons-categories/*");
+// const catalogImages = Object.values(import.meta.glob("/src/assets/lessons-categories/*", {eager: true}));
 
 interface Props {
   title: string;
@@ -22,7 +22,7 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
 
-const firstLevelFolder = audioData.children;
+const firstLevelFolder = audioData.categories;
 ---
 
 <section class="main-section-wrapper">
@@ -39,19 +39,18 @@ const firstLevelFolder = audioData.children;
       />
     </div>
   </div>
- <audio controls><source src="https://res.cloudinary.com/dzuxxbhow/video/upload/v1745654367/%D7%99%D7%97_%D7%91%D7%A9%D7%91%D7%98_wpuale.mp3" type="audio/mpeg"></audio>
   <div
     class="content-wrapper mx-auto grid max-w-6xl grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-2 lg:grid-cols-3"
   >
     {
-      firstLevelFolder.map((folder, index) => (
+      firstLevelFolder.map((folder) => (
         <a
           href={`${translatePath("/lessons/audio/")}${folder.slug}`}
           class="overflow-hidden rounded-2xl bg-white transition-all hover:shadow-lg"
         >
           <img
             alt="category image"
-            src={catImages[index].default.src}
+            src={folder.image}
             class="aspect-[2/1] w-full object-cover transition-all duration-500 ease-linear hover:scale-110"
           />
           <div class="p-4">

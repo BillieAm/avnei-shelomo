@@ -2,10 +2,10 @@
 import Base from "../../../layouts/Base.astro";
 import DonationCTA from "../../../components/DonationCTA.astro";
 import AudioLessonsContainer from "../../../components/AudioLessonsContainer";
-import folderStructure from "../../../data/audioLessons.json";
+import folderStructure from "../../../data/cloudinary-assets.json";
 
 export function getStaticPaths() {
-  return folderStructure.children.map((folder) => ({
+  return folderStructure.categories.map((folder) => ({
     params: { category: folder.slug },
     props: { folderData: folder },
   }));
