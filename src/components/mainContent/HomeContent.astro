@@ -23,8 +23,8 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
 
-const infoData = await getEntry('homeInfo', lang);
-const {Content} = await render(infoData);
+const infoData = await getEntry("homeInfo", lang);
+const { Content } = infoData ? await render(infoData) : { Content: () => null };
 
 const testimonialsList = {
   he: [
@@ -61,12 +61,13 @@ const testimonialsList = {
   ],
 };
 ---
+
 <!-- Main video -->
 <div class="flex justify-center pt-16">
   <iframe
     width="560"
     height="315"
-    src="https://player.vimeo.com/video/1075632828?h=b76d45be02&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479"
+    src="https://player.vimeo.com/video/1075632828?h=b76d45be02&badge=0&autopause=0&player_id=0&app_id=58479"
     title="Avnei Shelomo - promotional video"
     allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
     allowfullscreen></iframe>
@@ -81,7 +82,13 @@ const testimonialsList = {
   </div>
   <div class="flex flex-col gap-6">
     <div>
-      <h3 class="mb-4 text-3xl font-bold text-primary">{infoData.data.title}</h3>
+      {
+        infoData && (
+          <h3 class="mb-4 text-3xl font-bold text-primary">
+            {infoData.data.title}
+          </h3>
+        )
+      }
       <Content />
     </div>
     <div class="flex flex-col gap-6 sm:flex-row">
