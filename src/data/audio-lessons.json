@@ -1,0 +1,81 @@
+{
+  "categories": [
+    {
+      "image": "/assets/lessons-categories/a.webp",
+      "name": "Shiurim in English about the depth of the times and the chagim",
+      "description": "שיעורים בענייני הזמן והחגים באנגלית , לתועלת חברים דוברי אנגלית בכמה מקומות בעולם המתעניינים ונהנים מדברים נפלאים אלו ומתענגים על ה’ ועומק תורתו.",
+      "link": "https://drive.google.com/drive/folders/1vF79BQs10uYSY_ZF0misQ1l7xdmtaXqv?usp=drive_link",
+      "slug": "english"
+    },
+    {
+      "image": "/assets/lessons-categories/b.webp",
+      "name": "לשם שבו ואחלמה - הקדמות ושערים - גני הדר",
+      "description": "״וקוה קיוויתי לה’ ית״ש שכל מי שמשתוקק לטעום טעם עץ החיים ולהיות מהשרידים אשר ה’ קורא ימצא רב תועלת מהספר הזה הגם שהוא קטן בכמות כי רוב דברים כלולים בו והכל בלשון צח ונקי. (דברי בעל ה״לשם״ בהקדמת הספר).",
+      "link": "https://drive.google.com/drive/folders/1kbky4Xt3ygzSJSIJ7BpMxOjq_dbELAKb?usp=drive_link",
+      "slug": "leshem"
+    },
+    {
+      "image": "/assets/lessons-categories/c.webp",
+      "name": "לשם שבו ואחלמה - הקדמות ושערים",
+      "description": "זהו ספר ההקדמות החשוב ביותר על יסודות החכמה בו קבעו לימודם גדולי עולםלפני שנכנסו אל הקודש פנימה. זה לשון רבנו המחבר בהקדמתו לספר :״המתחיל כאשר ילמד אותומראשו לסופו יהיה לו מבוא גדול בחכמת האמת בכלל״.",
+      "link": "https://drive.google.com/drive/folders/1QBVBZW-WJmpsV2CVjx5RC0KbC_oG0-AU?usp=drive_link",
+      "slug": "hakdamot"
+    },
+    {
+      "image": "/assets/lessons-categories/d.webp",
+      "name": "ביאורים על העץ חיים - לשם שבו ואחלמה - פתח תקווה",
+      "description": " ״..לבאר קצת מעמקי סתרי פליאות ספר קודש הקודשים עץ חיים לארי״זל זצוק״ל ולזאת האיר ה’ את רוחי בשפעת חסדו וטובו לפתוח פתח כמעט ולדלות מים עמוקים ומתוקים ...מבארות חפרוה שרים כרוה נדיבי עם קדושי עליון האר״י והגר״א זצוק״ל וזיע״א.",
+      "link": "https://drive.google.com/drive/folders/1Lio43LOLqGZ1KscSY7ApnwABsAahjzEx?usp=drive_link",
+      "slug": "beurim"
+    },
+    {
+      "image": "/assets/lessons-categories/e.webp",
+      "name": "לשם שבו ואחלמה - ספר הכללים",
+      "description": " כללי התפשטות והסתלקות ובו יבואר נפלאות בסדר אריגת העולמותוהשתלשלותם מהעולם היותר עליון אשר ברום מעלה עד סוף כלל העולמותבריאה יצירה עשיה אשר נבראו הם יש מאין.(דברי בעל ה״לשם״ בכריכת הספר).",
+      "link": "https://drive.google.com/drive/folders/1uUX6Fxyx-7dU2kCGptMBqsXyWyZ808Gc?usp=drive_link",
+      "slug": "sefer-haklalim"
+    },
+    {
+      "image": "/assets/lessons-categories/f.webp",
+      "name": "לשם שבו ואחלמה - ביאורים על ספר ״עץ חיים״ של האריז״ל",
+      "description": " ״..לבאר קצת מעמקי סתרי פליאות ספר קודש הקודשים עץ חיים לארי״זל זצוק״ל ולזאת האיר ה’ את רוחי בשפעת חסדו וטובו לפתוח פתח כמעט ולדלות מים עמוקים ומתוקים ...מבארות חפרוה שרים כרוה נדיבי עם קדושי עליון האר״י והגר״א זצוק״ל וזיע״א.",
+      "link": "https://drive.google.com/drive/folders/15dCACPzyCPlWjniHiuUw_YlgQ6IxQyAO?usp=drive_link",
+      "slug": "arizal"
+    },
+    {
+      "image": "/assets/lessons-categories/g.webp",
+      "name": "שיעורים בספר ״נפש החיים״ לרבי חיים מוולאז’ין",
+      "description": "ספר יסוד מתלמיד הגר״א רבנו חיים מוולאז’ין על מבנה הנפש והקשר שלה עם עולמות עליונים עולמו של הקב״ה , בניית יסודות להבנת תשובות לשאלות העמוקות והכל בבקיאות מופלגת בכתבי הארי״זל והזוהר להעמיד את האמת בקרן אורה.",
+      "link": "https://drive.google.com/drive/folders/18HnjRb5cjoLVeQTeAA1aGmWLb7LkwZ4_?usp=drive_link",
+      "slug": "volozhin"
+    },
+    {
+      "image": "/assets/lessons-categories/h.webp",
+      "name": "שיעורים בספר ״שערי אורה״ למהר״י ג’יקטליה",
+      "description": " למדנו על מעלות הספר מדברי מו״ר הגאון הרב משה שפירא זצ״ל בהסכמתו להוצאת הביאור בית שער על הספר ז״ל : ״איהו תרעא לאעלא גו מהמנותא״. וכן מדברי הרב המחבר בהקדמתו: ״ שאלת ממני ..להאיר לפניך נתיב בעניין שמותיו של הקב״ה ...וכשתגיע לידיעת דבר זה אז תקרא וה’ יענה ותהיה מן הקרובים אליו ותאהב אותו בכל נפשך...״ .",
+      "link": "https://drive.google.com/drive/folders/1cBMy1DiEHHcWuMQ66mFdXx8LmGxxRJec?usp=drive_link",
+      "slug": "shaarei-ora"
+    },
+    {
+      "image": "/assets/lessons-categories/i.webp",
+      "name": "שיחות בענייני החגים",
+      "description": "שיעורים בסגנון מו״ר הרב שפירא זצ״ל אשר נאמרו בפני חברים מקשיבים להעמיק את עבודת הימים המיוחדים מתוך הבנת עומק עניינם.",
+      "link": "https://drive.google.com/drive/folders/1BtHURyAttsVyVBohjJQvv3gk6yqjwlgy?usp=drive_link",
+      "slug": "hachagim"
+    },
+    {
+      "image": "/assets/lessons-categories/j.webp",
+      "name": "שיעורים בכוונות החגים",
+      "description": " שיעורים בשער הכוונות לארי״זל לבאר עומק פעולותינו במצוות היום והשפעתן בריבוי ותוספת  הקדושה על עולמות עליונים על עולמנו אנו ועלינו.",
+      "link": "https://drive.google.com/drive/folders/1g5vYZ0VdkiT8m5rE9CIgktR2fyPVUQhD?usp=drive_link",
+      "slug": "kavanot-hachagim"
+    },
+    {
+      "image": "/assets/lessons-categories/k.webp",
+      "name": "שיעורים ושיחות בעניינים שונים בלונדון",
+      "description": " שיעורים שנאמרו בפני חברים שוחרי חכמה בלונדון, בהיותי שם לעשות עבור אברכי הכולל , חיפשתי אתונות ומצאתי מלוכה, אנשים נפלאים ולהם אוזן קשבת להבין עניינים עמוקים ונפלאים אלו .",
+      "link": "https://drive.google.com/drive/folders/1AnE-iXM_xaLH_Ibcwf79eh7j8Tpd1PpV?usp=drive_link",
+      "slug": "london"
+    }
+  ]
+}

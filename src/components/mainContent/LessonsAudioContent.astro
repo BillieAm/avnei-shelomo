@@ -4,7 +4,7 @@ import {
   useTranslations,
   useTranslatedPath,
 } from "../../i18n/utils";
-import audioData from "../../data/cloudinary-assets.json";
+import audioData from "../../data/audio-lessons.json";
 
 import { Image } from "astro:assets";
 import refaelImage from "../../assets/gallery/kollel-vibes/KV2A6208.webp";
@@ -22,7 +22,7 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
 
-const firstLevelFolder = audioData.categories;
+const audioLessonsCategories = audioData.categories;
 ---
 
 <section class="main-section-wrapper">
@@ -43,21 +43,22 @@ const firstLevelFolder = audioData.categories;
     class="content-wrapper mx-auto grid max-w-6xl grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-2 lg:grid-cols-3"
   >
     {
-      firstLevelFolder.map((folder) => (
+      audioLessonsCategories.map((category) => (
         <a
-          href={`${translatePath("/lessons/audio/")}${folder.slug}`}
+          href={category.link}
+          target="_blank"
           class="overflow-hidden rounded-2xl bg-white transition-all hover:shadow-lg"
         >
           <img
             alt="category image"
-            src={folder.image}
+            src={category.image}
             class="aspect-[2/1] w-full object-cover transition-all duration-500 ease-linear hover:scale-110"
           />
           <div class="p-4">
             <h2 class="mb-4 text-center text-lg font-bold text-primary-200">
-              {folder.name}
+              {category.name}
             </h2>
-            <p class="text-foreground-200">{folder.description}</p>
+            <p class="text-foreground-200">{category.description}</p>
           </div>
         </a>
       ))

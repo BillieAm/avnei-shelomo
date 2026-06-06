@@ -1,8 +1,8 @@
 ---
 import Base from "../../../../layouts/Base.astro";
 import DonationCTA from "../../../../components/DonationCTA.astro";
-import AudioLessonsContainer from "../../../../components/AudioLessonsContainer";
-import folderStructure from "../../../../data/cloudinary-assets.json";
+// import AudioLessonsContainer from "../../../../components/AudioLessonsContainer";
+import folderStructure from "../../../../data/audio-lessons.json";
 
 export function getStaticPaths() {
   return folderStructure.categories.map((folder) => ({
@@ -28,7 +28,7 @@ const { folderData } = Astro.props;
         >Back to Main</a
       >
     </div>
-    <AudioLessonsContainer client:load categoryData={folderData} />
+    <!-- <AudioLessonsContainer client:load categoryData={folderData} /> -->
   </section>
   <DonationCTA />
 </Base>
